@@ -1,3 +1,5 @@
+import { site } from '@/lib/data';
+
 export default function CTASection() {
   return (
     <section
@@ -34,7 +36,7 @@ export default function CTASection() {
 
         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="https://wa.me/000000000"
+            href={site.whatsappTransferLink}
             className="group inline-flex min-w-[260px] items-center justify-center gap-3 rounded-full bg-whatsapp px-8 py-4 text-sm font-medium text-pearl shadow-[0_20px_60px_-20px_oklch(0.62_0.16_145/0.6)] ring-1 ring-whatsapp transition-transform hover:scale-[1.02]"
           >
             <svg

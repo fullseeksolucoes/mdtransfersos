@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Menu, X, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { site, navLinks } from '@/lib/data';
 import Container from '@/components/shared/Container';
@@ -38,29 +39,42 @@ export default function Navbar() {
     >
       <Container>
         <nav className="flex items-center justify-between h-20 md:h-24">
-          <a
+          <Link
             href="/"
-            className="relative z-10 font-heading text-xl md:text-2xl font-medium tracking-tight text-charcoal-900"
+            className={cn(
+              'relative z-10 text-xl md:text-2xl font-medium tracking-tight transition-colors duration-500',
+              isScrolled ? 'text-charcoal-900' : 'text-white',
+            )}
           >
             {site.initials}
-            <span className="text-navy-700">.</span>
-          </a>
+            <span className={cn('transition-colors duration-500', isScrolled ? 'text-navy-700' : 'text-white/70')}>.</span>
+          </Link>
 
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-charcoal-600 hover:text-charcoal-900 transition-colors duration-300 tracking-wide font-body"
+                className={cn(
+                  'text-sm font-medium transition-colors duration-300 tracking-wide font-body',
+                  isScrolled
+                    ? 'text-charcoal-600 hover:text-charcoal-900'
+                    : 'text-white/80 hover:text-white',
+                )}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href={site.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-navy-700 hover:text-navy-800 transition-colors duration-300"
+              className={cn(
+                'inline-flex items-center gap-2 text-sm font-medium transition-colors duration-300',
+                isScrolled
+                  ? 'text-navy-700 hover:text-navy-800'
+                  : 'text-white/80 hover:text-white',
+              )}
             >
               <MessageCircle className="w-4 h-4" />
               WhatsApp
@@ -69,7 +83,10 @@ export default function Navbar() {
 
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="relative z-10 md:hidden p-2 -mr-2 text-charcoal-700"
+            className={cn(
+              'relative z-10 md:hidden p-2 -mr-2 transition-colors duration-500',
+              isScrolled ? 'text-charcoal-700' : 'text-white',
+            )}
             aria-label="Toggle menu"
           >
             {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -88,14 +105,14 @@ export default function Navbar() {
           >
             <div className="flex flex-col items-center justify-center h-full gap-10">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileOpen(false)}
-                  className="text-2xl font-heading font-medium text-charcoal-900 hover:text-navy-700 transition-colors"
+                  className="text-2xl font-medium text-charcoal-900 hover:text-navy-700 transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href={site.whatsappLink}

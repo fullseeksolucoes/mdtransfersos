@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function SeoContentSection() {
   const ref = useRef(null);
@@ -9,7 +10,6 @@ export default function SeoContentSection() {
 
   return (
     <section className="relative py-32 overflow-hidden bg-muted/30">
-      {/* Background */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -28,25 +28,18 @@ export default function SeoContentSection() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Editorial Header */}
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-6 h-px bg-primary/40" />
-              <span className="text-xs font-medium tracking-[0.3em] text-primary uppercase">
-                Sobre nós
-              </span>
-              <div className="w-6 h-px bg-primary/40" />
-            </div>
-            <h2 className="font-display font-extrabold text-4xl md:text-6xl text-ink-800 tracking-tight mb-4">
-              Transporte premium.
-              <br />
-              <span className="text-ink-400">Assistência completa.</span>
-            </h2>
+            <SectionHeader
+              eyebrow="Sobre nós"
+              title="Transporte premium."
+              subtitle="Assistência completa."
+              align="center"
+              accent="primary"
+              animated={false}
+            />
           </div>
 
-          {/* Content Grid */}
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-            {/* Left Column */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -87,7 +80,6 @@ export default function SeoContentSection() {
               </article>
             </motion.div>
 
-            {/* Right Column */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -129,7 +121,6 @@ export default function SeoContentSection() {
             </motion.div>
           </div>
 
-          {/* Service Tags */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}

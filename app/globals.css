@@ -95,6 +95,257 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* ═══════════════════════════════════════════════
+     SCROLLBAR — Premium Fluid Scrollbar System
+     ═══════════════════════════════════════════════
+     Base:    Thin, translucent, rounded thumb
+     Hover:   Expands & brightens with elastic feel
+     Active:  Solid color on drag
+     Dark:    White thumb on dark track
+     Light:   Dark thumb on light track
+     ═══════════════════════════════════════════════ */
+
+  :root {
+    --sb-track:       oklch(0.145 0 0 / 0.06);
+    --sb-thumb:       oklch(0.145 0 0 / 0.20);
+    --sb-thumb-hover: oklch(0.145 0 0 / 0.35);
+    --sb-thumb-active: oklch(0.145 0 0 / 0.50);
+    --sb-width:       6px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --sb-track:        oklch(0.97 0 0 / 0.06);
+      --sb-thumb:        oklch(0.97 0 0 / 0.18);
+      --sb-thumb-hover:  oklch(0.97 0 0 / 0.32);
+      --sb-thumb-active: oklch(0.97 0 0 / 0.50);
+    }
+  }
+
+  /* ── WebKit / Blink ── */
+  ::-webkit-scrollbar {
+    width: var(--sb-width);
+    height: var(--sb-width);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: calc(var(--sb-width) / 2);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb);
+    border-radius: calc(var(--sb-width) / 2);
+    transition: background 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--sb-thumb-hover);
+  }
+
+  ::-webkit-scrollbar-thumb:active {
+    background: var(--sb-thumb-active);
+  }
+
+  /* ── Firefox ── */
+  * {
+    scrollbar-color: var(--sb-thumb) transparent;
+    scrollbar-width: thin;
+  }
+
+  /* ── Container scroll hint (optional subtle gradient) ── */
+  .sb-premium {
+    --sb-track:       oklch(0.145 0 0 / 0.04);
+    --sb-thumb:       oklch(0.145 0 0 / 0.15);
+    --sb-thumb-hover: oklch(0.145 0 0 / 0.30);
+    --sb-thumb-active: oklch(0.145 0 0 / 0.45);
+  }
+
+  .sb-premium-dark {
+    --sb-track:        oklch(0.97 0 0 / 0.04);
+    --sb-thumb:        oklch(0.97 0 0 / 0.15);
+    --sb-thumb-hover:  oklch(0.97 0 0 / 0.28);
+    --sb-thumb-active: oklch(0.97 0 0 / 0.45);
+  }
+
+  /* ── Variant: Glassmorphism ── */
+  .sb-glass::-webkit-scrollbar-thumb {
+    background: oklch(0.97 0 0 / 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid oklch(0.97 0 0 / 0.08);
+    box-shadow: 0 0 0 1px oklch(0 0 0 / 0.04);
+  }
+
+  .sb-glass::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.97 0 0 / 0.25);
+    border-color: oklch(0.97 0 0 / 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .sb-glass::-webkit-scrollbar-thumb {
+      background: oklch(0 0 0 / 0.20);
+      border: 1px solid oklch(0 0 0 / 0.10);
+      box-shadow: 0 0 0 1px oklch(0.97 0 0 / 0.04);
+    }
+
+    .sb-glass::-webkit-scrollbar-thumb:hover {
+      background: oklch(0 0 0 / 0.35);
+    }
+  }
+
+  /* ── Variant: Ultra Minimalist ── */
+  .sb-minimal {
+    --sb-width: 4px;
+  }
+
+  .sb-minimal::-webkit-scrollbar-thumb {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .sb-minimal::-webkit-scrollbar-thumb:hover,
+  .sb-minimal::-webkit-scrollbar-thumb:active {
+    background: var(--sb-thumb-hover);
+  }
+
+  .sb-minimal:hover::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb);
+  }
+
+  .sb-minimal:hover::-webkit-scrollbar-thumb:hover {
+    background: var(--sb-thumb-hover);
+  }
+
+  /* ── Variant: Apple / macOS ── */
+  .sb-apple {
+    --sb-width: 7px;
+  }
+
+  .sb-apple::-webkit-scrollbar {
+    background: transparent;
+  }
+
+  .sb-apple::-webkit-scrollbar-track {
+    margin: 3px;
+    background: transparent;
+  }
+
+  .sb-apple::-webkit-scrollbar-thumb {
+    background: oklch(0.145 0 0 / 0.16);
+    border-radius: 99px;
+    border: 1.5px solid transparent;
+    background-clip: content-box;
+    min-height: 32px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .sb-apple::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.145 0 0 / 0.28);
+    border-color: transparent;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .sb-apple::-webkit-scrollbar-thumb {
+      background: oklch(0.97 0 0 / 0.14);
+    }
+    .sb-apple::-webkit-scrollbar-thumb:hover {
+      background: oklch(0.97 0 0 / 0.26);
+    }
+  }
+
+  /* ── Variant: SaaS Modern ── */
+  .sb-saas {
+    --sb-width: 5px;
+  }
+
+  .sb-saas::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      180deg,
+      oklch(0.55 0.12 265 / 0.25),
+      oklch(0.55 0.12 265 / 0.40)
+    );
+    border-radius: 99px;
+    transition: background 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .sb-saas::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      180deg,
+      oklch(0.55 0.12 265 / 0.40),
+      oklch(0.55 0.12 265 / 0.60)
+    );
+    transform: scaleX(1.2);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .sb-saas::-webkit-scrollbar-thumb {
+      background: linear-gradient(
+        180deg,
+        oklch(0.65 0.15 265 / 0.20),
+        oklch(0.65 0.15 265 / 0.35)
+      );
+    }
+    .sb-saas::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(
+        180deg,
+        oklch(0.65 0.15 265 / 0.35),
+        oklch(0.65 0.15 265 / 0.55)
+      );
+    }
+  }
+
+  /* ── Premium Hover Animation ── */
+  .sb-premium-hover::-webkit-scrollbar-thumb {
+    position: relative;
+    background: var(--sb-thumb);
+    border-radius: 99px;
+    transition: background 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .sb-premium-hover::-webkit-scrollbar-thumb:hover {
+    background: var(--sb-thumb-hover);
+    box-shadow: 0 0 12px oklch(0.55 0.12 265 / 0.20);
+  }
+
+  .sb-premium-hover::-webkit-scrollbar-thumb:active {
+    background: var(--sb-thumb-active);
+    box-shadow: 0 0 16px oklch(0.55 0.12 265 / 0.30);
+  }
+
+  /* ── Corner (both scrollbars visible) ── */
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  /* ── Tailwind variant (add `scrollbar-premium` to any element) ── */
+  .scrollbar-premium {
+    scrollbar-width: thin;
+    scrollbar-color: var(--sb-thumb) transparent;
+  }
+
+  .scrollbar-premium::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-premium::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-premium::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb);
+    border-radius: 99px;
+    transition: background 0.25s ease;
+  }
+
+  .scrollbar-premium::-webkit-scrollbar-thumb:hover {
+    background: var(--sb-thumb-hover);
+  }
 }
 
 @layer utilities {
@@ -311,4 +562,60 @@
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+}
+
+/* ---- Cinematic Extras ---- */
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+  opacity: 0.35;
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1.02) translate3d(0, 0, 0); }
+  100% { transform: scale(1.12) translate3d(-1%, -1%, 0); }
+}
+
+.animate-ken {
+  animation: kenBurns 18s ease-out infinite alternate;
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.animate-pulse-ring {
+  animation: pulseRing 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+.lift {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lift:hover {
+  transform: translateY(-3px);
+}
+
+.steer {
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .steer {
+  transform: rotate(18deg);
 }

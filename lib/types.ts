@@ -71,5 +71,9 @@ export interface SiteConfig {
   email: string;
   whatsapp: string;
   whatsappLink: string;
+  whatsappSOS: string;
+  whatsappSOSLink: string;
+  whatsappTransfer: string;
+  whatsappTransferLink: string;
   address: string;
 }

@@ -2,6 +2,7 @@
 
 import type { ElementType } from 'react';
 import { cn } from '@/lib/utils';
+import Reveal from './Reveal';
 
 export type ServiceVariant = 'ocean' | 'alert';
 
@@ -40,12 +41,6 @@ const variantStyles: Record<ServiceVariant, {
   },
 };
 
-const delayMap: Record<number, string> = {
-  0: 'reveal-delay-2',
-  1: 'reveal-delay-3',
-  2: 'reveal-delay-4',
-};
-
 export default function ServiceCard({
   icon: Icon,
   title,
@@ -55,16 +50,15 @@ export default function ServiceCard({
   delay = 0,
 }: ServiceCardProps) {
   const styles = variantStyles[variant];
-  const delayClass = delayMap[delay] || '';
 
   return (
-    <div
-      className={cn(
-        'reveal card-lift group relative bg-white border border-ink-200 p-8 transition-all duration-500',
-        styles.hoverBorder,
-        delayClass,
-      )}
-    >
+    <Reveal delay={delay * 100 + 200}>
+      <div
+        className={cn(
+          'card-lift group relative bg-white border border-ink-200 p-8 transition-all duration-500 flex flex-col h-[270px]',
+          styles.hoverBorder,
+        )}
+      >
       {/* Corner accent */}
       <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <div
@@ -75,18 +69,16 @@ export default function ServiceCard({
         />
       </div>
 
-      {/* Tag */}
-      <div
-        className={cn(
-          'inline-flex items-center px-2.5 py-1 rounded-sm text-xs font-medium tracking-widest uppercase mb-6 border',
-          styles.tag,
-        )}
-      >
-        {tag}
-      </div>
-
-      {/* Icon */}
-      <div className="icon-frame mb-6">
+      {/* Tag + Icon row */}
+      <div className="flex items-center justify-between mb-6">
+        <div
+          className={cn(
+            'inline-flex items-center px-2.5 py-1 rounded-sm text-xs font-medium tracking-widest uppercase border',
+            styles.tag,
+          )}
+        >
+          {tag}
+        </div>
         <div
           className={cn(
             'w-12 h-12 rounded-sm flex items-center justify-center border group-hover:scale-105 transition-transform duration-400',
@@ -102,20 +94,23 @@ export default function ServiceCard({
       </div>
 
       {/* Content */}
-      <h3 className="font-display font-bold text-ink-800 text-xl mb-3 group-hover:text-ink-900 transition-colors duration-300">
-        {title}
-      </h3>
-      <p className="text-ink-500 text-sm leading-relaxed group-hover:text-ink-600 transition-colors duration-300">
-        {description}
-      </p>
+      <div className="flex-1">
+        <h3 className="font-bold text-ink-800 text-xl mb-3 group-hover:text-ink-900 transition-colors duration-300">
+          {title}
+        </h3>
+        <p className="text-ink-500 text-sm leading-relaxed group-hover:text-ink-600 transition-colors duration-300">
+          {description}
+        </p>
+      </div>
 
       {/* Bottom accent line */}
       <div
         className={cn(
-          'mt-8 w-8 h-0.5 opacity-0 group-hover:opacity-100 group-hover:w-full transition-all duration-500',
+          'mt-auto w-8 h-0.5 opacity-0 group-hover:opacity-100 group-hover:w-full transition-all duration-500',
           styles.accentBar,
         )}
       />
     </div>
+    </Reveal>
   );
 }

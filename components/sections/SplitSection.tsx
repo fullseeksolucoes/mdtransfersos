@@ -1,15 +1,16 @@
+import Image from "next/image";
+
 export default function SplitSection() {
   return (
     <section className="relative bg-background">
       <div className="grid md:grid-cols-2">
         <div className="relative aspect-[5/4] md:aspect-auto md:min-h-[520px] overflow-hidden">
-          <img
+          <Image
+            fill
             src="/interior.jpg"
             alt="Interior de carro de luxo à noite"
-            width={1600}
-            height={1200}
-            loading="lazy"
-            className="h-full w-full object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">
@@ -21,13 +22,12 @@ export default function SplitSection() {
         </div>
 
         <div className="relative aspect-[5/4] md:aspect-auto md:min-h-[520px] overflow-hidden md:border-l border-hairline">
-          <img
+          <Image
+            fill
             src="/sos-hands.jpg"
             alt="Técnico de assistência rodoviária trabalhando à noite"
-            width={1600}
-            height={1200}
-            loading="lazy"
-            className="h-full w-full object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">

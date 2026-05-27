@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { Phone, MapPin, MessageCircle } from "lucide-react";
 import { site, navLinks } from "@/lib/data";
 import Container from "@/components/shared/Container";
 import Link from "next/link";
@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <Link
               href="/"
-              className="font-heading text-2xl font-medium tracking-tight text-white"
+              className="text-2xl font-medium tracking-tight text-white"
             >
               {site.initials}
               <span className="text-navy-500">.</span>
@@ -32,12 +32,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {navLinks.slice(0, 3).map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -49,22 +49,14 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li>
-                <a
-                  href={`tel:${site.phone}`}
-                  className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
-                >
-                  <Phone className="w-4 h-4 text-navy-500" />
-                  {site.phoneDisplay}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${site.email}`}
-                  className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
-                >
-                  <Mail className="w-4 h-4 text-navy-500" />
-                  {site.email}
-                </a>
+                <span className="flex items-center gap-3 text-sm text-white/50 font-body">
+                  <Phone className="w-4 h-4 text-navy-500 shrink-0" />
+                  <span>
+                    <a href={`tel:${site.whatsappSOS}`} className="hover:text-white transition-colors duration-300">47 99677-1229</a> (SOS)
+                    <br />
+                    <a href={`tel:${site.whatsappTransfer}`} className="hover:text-white transition-colors duration-300">47 99995-9607</a> (Transfer)
+                  </span>
+                </span>
               </li>
               <li>
                 <span className="flex items-center gap-3 text-sm text-white/50 font-body">
@@ -74,13 +66,24 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={site.whatsappLink}
+                  href={site.whatsappSOSLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
                 >
                   <MessageCircle className="w-4 h-4 text-navy-500" />
-                  WhatsApp
+                  SOS — 47 99677-1229
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.whatsappTransferLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
+                >
+                  <MessageCircle className="w-4 h-4 text-navy-500" />
+                  Transfer — 47 99995-9607
                 </a>
               </li>
             </ul>
