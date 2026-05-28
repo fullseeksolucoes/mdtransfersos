@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Menu, X, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
@@ -11,6 +11,7 @@ import Container from '@/components/shared/Container';
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -26,6 +27,17 @@ export default function Navbar() {
     return () => {
       document.body.style.overflow = '';
     };
+  }, [isMobileOpen]);
+
+  useEffect(() => {
+    if (!isMobileOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setIsMobileOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
   }, [isMobileOpen]);
 
   return (
@@ -87,7 +99,9 @@ export default function Navbar() {
               'relative z-10 md:hidden p-2 -mr-2 transition-colors duration-500',
               isScrolled ? 'text-charcoal-700' : 'text-white',
             )}
-            aria-label="Toggle menu"
+            aria-label={isMobileOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={isMobileOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -97,33 +111,41 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileOpen && (
           <motion.div
-            className="fixed inset-0 top-0 z-0 bg-white md:hidden"
-            initial={{ opacity: 0, y: -20 }}
+            ref={menuRef}
+            className="md:hidden"
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="flex flex-col items-center justify-center h-full gap-10">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsMobileOpen(false)}
-                  className="text-2xl font-medium text-charcoal-900 hover:text-navy-700 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <a
-                href={site.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileOpen(false)}
-                className="inline-flex items-center gap-3 mt-4 px-8 py-3 bg-[#25D366] text-white text-sm font-medium uppercase tracking-wider"
-              >
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp
-              </a>
+            <div id="mobile-menu" className="bg-white/95 backdrop-blur-md border-t border-ink-200 shadow-lg">
+              <Container>
+                <nav className="flex flex-col gap-1 pb-6 pt-4">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsMobileOpen(false)}
+                      className="px-4 py-3 rounded-lg text-sm font-medium tracking-wide text-charcoal-600 hover:bg-charcoal-100 hover:text-charcoal-900 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+
+                <div className="pb-6">
+                  <a
+                    href={site.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileOpen(false)}
+                    className="flex items-center justify-center gap-2 w-full rounded-lg bg-navy-700 text-white px-5 py-3 text-sm font-medium transition-colors hover:bg-navy-800"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Fale Conosco
+                  </a>
+                </div>
+              </Container>
             </div>
           </motion.div>
         )}

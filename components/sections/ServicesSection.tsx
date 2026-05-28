@@ -1,6 +1,6 @@
 'use client';
 
-import { Car, Plane, Building2, Wrench, Zap, AlertTriangle } from 'lucide-react';
+import { Car, Plane, Building2, Wrench, Zap, AlertTriangle, CircleDot } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Reveal from '@/components/ui/Reveal';
@@ -8,7 +8,7 @@ import { transferServices, sosServices } from '@/lib/data';
 import type { LucideIcon } from 'lucide-react';
 
 const iconMap: Record<string, LucideIcon> = {
-  Car, Plane, Building2, Wrench, Zap, AlertTriangle,
+  Car, Plane, Building2, Wrench, Zap, AlertTriangle, CircleDot,
 };
 
 export default function ServicesSection() {

@@ -58,12 +58,12 @@ export default function HeroSection() {
               className="rise mt-6 text-balance text-[clamp(2.6rem,7vw,5.8rem)] font-medium leading-[0.98] tracking-[-0.02em] text-foreground"
               style={{ animationDelay: "0.1s" }}
             >
-              Mobilidade executiva.
+              Transfer Executivo
               <br />
               <span className="inline-flex items-baseline gap-3">
-                <span className="font-light italic text-gold">Automotivo</span>
+                <span className="font-light italic text-gold">&amp; SOS</span>
                 <span className="relative">
-                  SOS
+                  Joinville
                   <span className="absolute -right-3 top-1.5 flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-sos opacity-75 gps-ping" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-sos" />

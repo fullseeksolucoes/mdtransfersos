@@ -2,7 +2,6 @@ import type {
   SiteConfig,
   NavLink,
   ServiceContent,
-  Vehicle,
   JourneyStep,
   TrustMetric,
   Testimonial,
@@ -32,7 +31,7 @@ export const navLinks: NavLink[] = [
   { label: "Serviços", href: "#services" },
   { label: "Frota", href: "#fleet" },
   { label: "Cobertura", href: "#coverage" },
-  { label: "Contato", href: "#contact" },
+  { label: "Contato", href: "#book" },
 ];
 
 export const hero = {
@@ -105,57 +104,6 @@ export const sosService: ServiceContent = {
   accent: "red",
 };
 
-export const fleet: Vehicle[] = [
-  {
-    name: "Mercedes-Benz S-Class",
-    category: "Sedã Executivo",
-    tagline: "O padrão da mobilidade executiva.",
-    image:
-      "https://images.unsplash.com/photo-1563720223185-11003d0e95c5?w=800&q=80",
-    specs: [
-      { label: "Capacidade", value: "4 Passageiros" },
-      { label: "Classe", value: "Luxo Completo" },
-    ],
-    accent: "blue",
-  },
-  {
-    name: "BMW 7 Series",
-    category: "Sedã Executivo",
-    tagline: "Conduzindo a excelência adiante.",
-    image:
-      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
-    specs: [
-      { label: "Capacidade", value: "4 Passageiros" },
-      { label: "Classe", value: "Luxo Completo" },
-    ],
-    accent: "blue",
-  },
-  {
-    name: "Cadillac Escalade ESV",
-    category: "SUV Premium",
-    tagline: "Presença de comando. Conforto sem concessões.",
-    image:
-      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80",
-    specs: [
-      { label: "Capacidade", value: "6 Passageiros" },
-      { label: "Classe", value: "SUV Luxo Completo" },
-    ],
-    accent: "blue",
-  },
-  {
-    name: "Mercedes-Benz V-Class",
-    category: "Van de Luxo",
-    tagline: "Viagem em grupo, luxo individual.",
-    image:
-      "https://images.unsplash.com/photo-1622396481328-9b1b78fcee63?w=800&q=80",
-    specs: [
-      { label: "Capacidade", value: "8 Passageiros" },
-      { label: "Classe", value: "Transporte Premium" },
-    ],
-    accent: "blue",
-  },
-];
-
 export const journeySteps: JourneyStep[] = [
   {
     step: "01",
@@ -199,25 +147,25 @@ export const testimonials: Testimonial[] = [
     name: "Rafael Monteiro",
     role: "CEO — Monteiro Holdings",
     content:
-      "MD Transfers redefined what I expect from executive transportation. The S-Class they sent for my board meeting was immaculate, the driver anticipated every turn. This is how mobility should feel.",
+      "A MD Transfers redefiniu o que espero do transporte executivo. O S-Class que enviaram para minha reunião do conselho estava impecável, o motorista antecipava cada curva. É assim que a mobilidade deveria ser.",
     rating: 5,
-    highlight: "The S-Class they sent was immaculate.",
+    highlight: "O S-Class estava impecável.",
   },
   {
     name: "Carla Mendes",
     role: "VP Operations — Innova Group",
     content:
-      "When my car broke down on the highway at midnight, MD SOS arrived in 11 minutes. Eleven minutes. The professionalism and speed were extraordinary. I have never felt safer on the road.",
+      "Quando meu carro quebrou na rodovia à meia-noite, o MD SOS chegou em 11 minutos. Onze minutos. O profissionalismo e a velocidade foram extraordinários. Nunca me senti tão segura na estrada.",
     rating: 5,
-    highlight: "MD SOS arrived in 11 minutes.",
+    highlight: "MD SOS chegou em 11 minutos.",
   },
   {
     name: "Dr. Fernando Alves",
-    role: "Medical Director — Hospital São Lucas",
+    role: "Diretor Médico — Hospital São Lucas",
     content:
-      "We trust MD Transfers with our VIP patient transfers. The reliability, discretion, and vehicle hygiene standards exceed our expectations every single time.",
+      "Confiámos à MD Transfers os transfers dos nossos pacientes VIP. A confiabilidade, discrição e padrões de higiene dos veículos superam nossas expectativas todas as vezes.",
     rating: 5,
-    highlight: "Reliability and discretion exceed expectations.",
+    highlight: "Confiabilidade e discrição superam expectativas.",
   },
 ];
 
@@ -233,6 +181,7 @@ export const coverageCities: CoverageCity[] = [
 export const coverageRoutes: CoverageRoute[] = [
   { from: "Aeroporto de Joinville", to: "Centro de Joinville" },
   { from: "Aeroporto de Joinville", to: "Distritos Comerciais" },
+  { from: "Aeroporto de Navegantes", to: "Joinville" },
   { from: "Joinville", to: "São Francisco do Sul" },
   { from: "Joinville", to: "Porto de Itapoá" },
 ];
@@ -240,10 +189,10 @@ export const coverageRoutes: CoverageRoute[] = [
 export const seoContent = {
   title: "Transfer Executivo Premium e Assistência Rodoviária em Joinville",
   paragraphs: [
-    "A MD Transfers & SOS é a principal provedora de serviços de transfer executivo e emergência automotiva de Joinville e região. Unimos as expectativas de mobilidade corporativa com as realidades das estradas — oferecendo desde transfers de aeroporto com motoristas de luxo até resposta imediata a emergências rodoviárias.",
-    "Nosso serviço de transfer executivo cobre a região metropolitana de Joinville, incluindo o Aeroporto Lauro Carneiro de Loyola, distritos comerciais e áreas residenciais nobres. Cada veículo em nossa frota é selecionado para conforto, estilo e apresentação profissional — garantindo que cada jornada reforce sua reputação.",
-    "Para motoristas e frotistas, nossa divisão SOS Automotivo oferece a rede de assistência rodoviária mais ágil da região. Com unidades de resposta rápida estrategicamente localizadas, despacho com rastreamento GPS e coordenação 24/7, entregamos tranquilidade mensurável em minutos, não em horas.",
-    "Se você precisa de transporte executivo para uma reunião importante ou suporte rodoviário de emergência após uma pane inesperada, a MD Transfers & SOS oferece um padrão único de serviço: excepcional, imediato e profissional.",
+    "A MD Transfers & SOS é líder em transfer executivo e assistência rodoviária em Joinville e região. Somos a melhor opção para quem busca motorista particular de confiança, carro com motorista profissional e suporte automotivo de emergência — tudo com um padrão premium de atendimento.",
+    "Nosso serviço de transfer executivo cobre toda a região metropolitana de Joinville, incluindo o Aeroporto Lauro Carneiro de Loyola, o Aeroporto de Navegantes (Minister Victor Konder), distritos comerciais e áreas residenciais nobres. Fazemos transfers para toda Santa Catarina com frota de veículos executivos selecionados para conforto, estilo e apresentação profissional.",
+    "Para motoristas e frotistas, nossa divisão SOS Automotivo oferece a rede de assistência rodoviária mais ágil da região. Com unidades de resposta rápida estrategicamente localizadas, despacho com rastreamento GPS e coordenação 24/7, entregamos tranquilidade mensurável em minutos, não em horas. Serviços de troca de pneus, recarga de bateria e reparo de pneu furado estão disponíveis a qualquer hora.",
+    "Se você precisa de transporte executivo para uma reunião importante, van executiva para grupo, transfer para o aeroporto de Navegantes ou suporte rodoviário de emergência, a MD Transfers & SOS oferece um padrão único de serviço: excepcional, imediato e profissional.",
   ],
 };
 
@@ -297,17 +246,17 @@ export const sosServices: TransferService[] = [
   },
   {
     icon: "Zap",
-    title: "Recarga de Bateria",
+    title: "Recarga Bateria (chupeta)",
     description:
-      "Bateria descarregada? Chegamos em minutos com equipamento profissional de alta potência.",
+      "Bateria descarregada? Chegamos em minutos com equipamento profissional para dar a partida. Serviço rápido e seguro, conhecido como chupeta.",
     tag: "Bateria",
   },
   {
-    icon: "AlertTriangle",
-    title: "SOS de Emergência",
+    icon: "CircleDot",
+    title: "Remendar Pneu Furado",
     description:
-      "Assistência completa em situações críticas: pane seca, quebra mecânica, acidente e guincho 24h.",
-    tag: "SOS",
+      "Pneu furado ou murcho? Fazemos o reparo rápido na hora, sem precisar trocar. Enchemos seu pneu para você seguir viagem com segurança.",
+    tag: "Pneu",
   },
 ];
 
@@ -364,7 +313,7 @@ export const howItWorksSteps: HowItWorksStep[] = [
     n: "01",
     label: "Solicitar",
     title: "Uma única mensagem.",
-    copy: "WhatsApp, telefone ou nosso portal seguro. Compartilhe local de coleta, destino e horário — ou as coordenadas precisas de uma ocorrência rodoviária.",
+    copy: "WhatsApp, telefone ou nosso portal seguro. Compartilhe local de coleta, destino e horário.",
   },
   {
     n: "02",
@@ -376,7 +325,66 @@ export const howItWorksSteps: HowItWorksStep[] = [
     n: "03",
     label: "Chegar",
     title: "Calmo, no horário, sempre.",
-    copy: "Da porta da sua residência até a pista de pouso, ou de um acostamento de volta ao movimento — gerenciado com cuidado documentado.",
+    copy: "Da porta da sua residência até a pista de pouso, ou de um acostamento de volta ao movimento.",
+  },
+];
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+  category: 'transfer' | 'sos';
+}
+
+export const faqData: FAQItem[] = [
+  {
+    question: "Com quanta antecedência preciso agendar um transfer?",
+    answer: "Recomendamos o agendamento com pelo menos 2 horas de antecedência para transfers executivos. Para o Aeroporto de Navegantes ou horários de pico, sugerimos 24h. Aceitamos solicitações de última hora conforme disponibilidade — consulte pelo WhatsApp.",
+    category: "transfer",
+  },
+  {
+    question: "Quanto custa o serviço de transfer executivo?",
+    answer: "O valor varia conforme distância, veículo e horário. Trabalhamos com preço fechado sem surpresas — sem taxímetro. Solicite um orçamento gratuito pelo WhatsApp e receba o valor exato antes de confirmar.",
+    category: "transfer",
+  },
+  {
+    question: "Como funciona o monitoramento de voos?",
+    answer: "Acompanhamos seu voo em tempo real pelo código de reserva. Se houver atraso ou antecipação, ajustamos automaticamente o horário do motorista. Você não paga nada a mais por atrasos — o motorista espera o tempo que for necessário.",
+    category: "transfer",
+  },
+  {
+    question: "Quais formas de pagamento são aceitas?",
+    answer: "Aceitamos dinheiro, cartão de crédito/débito (na hora ou faturado), PIX e transferência bancária. Para clientes corporativos, oferecemos faturamento mensal com nota fiscal.",
+    category: "transfer",
+  },
+  {
+    question: "Atendem fora de Joinville?",
+    answer: "Sim. Fazemos transfers para toda a região metropolitana de Joinville, incluindo Araquari, São Francisco do Sul, Itapoá, Jaraguá do Sul, Guaramirim e principalmente o Aeroporto de Navegantes. Consulte-nos para destinos em Santa Catarina.",
+    category: "transfer",
+  },
+  {
+    question: "Quanto tempo o SOS leva para chegar?",
+    answer: "Nosso tempo médio de resposta é inferior a 20 minutos na região metropolitana de Joinville. Unidades de atendimento ficam estrategicamente posicionadas em pontos estratégicos da cidade para garantir o menor tempo de chegada possível.",
+    category: "sos",
+  },
+  {
+    question: "Quais serviços o SOS Automotivo inclui?",
+    answer: "Oferecemos troca de pneus, remendo e enchimento de pneu furado, recarga de bateria (chupeta), assistência em travamento e entrega de combustível. Não realizamos reboque ou guincho. Cada serviço é realizado por técnicos treinados com equipamento profissional.",
+    category: "sos",
+  },
+  {
+    question: "Como solicitar o SOS Automotivo?",
+    answer: "Ligue ou envie WhatsApp para (47) 99677-1229. Informe sua localização e o problema. Nossa central despacha a unidade mais próxima em segundos, e você recebe a previsão de chegada em tempo real com rastreamento GPS.",
+    category: "sos",
+  },
+  {
+    question: "O SOS atende 24 horas, inclusive feriados?",
+    answer: "Sim. Nossa central de emergência opera 24 horas por dia, 7 dias por semana, incluindo feriados. Panes não seguem horário comercial — e nós também não.",
+    category: "sos",
+  },
+  {
+    question: "Vocês atendem na estrada ou só em áreas urbanas?",
+    answer: "Atendemos tanto em áreas urbanas quanto em rodovias de acesso da região metropolitana de Joinville. Se você está em uma via de acesso dentro da nossa área de cobertura, podemos ajudar.",
+    category: "sos",
   },
 ];
 

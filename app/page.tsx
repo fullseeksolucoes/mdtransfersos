@@ -6,6 +6,7 @@ import HowItWorksSection from '@/components/sections/HowItWorksSection';
 import CoverageSection from '@/components/sections/CoverageSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import SeoContentSection from '@/components/sections/SeoContentSection';
+import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <CoverageSection />
       <TestimonialsSection />
       <SeoContentSection />
+      <FAQSection />
       <CTASection />
     </>
   );

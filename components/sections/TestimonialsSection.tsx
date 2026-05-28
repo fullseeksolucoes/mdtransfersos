@@ -18,10 +18,13 @@ export default function TestimonialsSection() {
   const currentPage = Math.floor(activeIndex / 3);
 
   return (
-    <section id="testimonials" className="relative bg-white py-32 overflow-hidden">
+    <section
+      id="testimonials"
+      className="relative bg-white py-32 overflow-hidden"
+    >
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -61,8 +64,18 @@ export default function TestimonialsSection() {
             disabled={!canGoPrev}
             className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-ink-600 hover:border-primary hover:text-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
 
@@ -72,19 +85,35 @@ export default function TestimonialsSection() {
                 key={i}
                 onClick={() => setActiveIndex(i * 3)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  currentPage === i ? "bg-primary w-6" : "bg-border hover:bg-primary/50"
+                  currentPage === i
+                    ? "bg-primary w-6"
+                    : "bg-border hover:bg-primary/50"
                 }`}
               />
             ))}
           </div>
 
           <button
-            onClick={() => setActiveIndex(Math.min(testimonialsData.length - 3, activeIndex + 3))}
+            onClick={() =>
+              setActiveIndex(
+                Math.min(testimonialsData.length - 3, activeIndex + 3),
+              )
+            }
             disabled={!canGoNext}
             className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-ink-600 hover:border-primary hover:text-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
         </div>

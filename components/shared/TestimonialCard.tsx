@@ -12,7 +12,7 @@ interface TestimonialCardProps {
   index: number;
 }
 
-const isSOS = (s: string) => s.includes('SOS');
+const isSOS = (s: string) => s.includes('Pneu') || s.includes('Bateria') || s.includes('SOS');
 
 export default function TestimonialCard({
   name,

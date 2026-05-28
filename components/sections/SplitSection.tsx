@@ -15,9 +15,9 @@ export default function SplitSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">
             <span className="eyebrow text-gold">Transfer</span>
-            <h3 className="mt-3 max-w-md text-[clamp(1.6rem,3vw,2.6rem)] font-medium leading-tight text-foreground">
+            <h2 className="mt-3 max-w-md text-[clamp(1.6rem,3vw,2.6rem)] font-medium leading-tight text-foreground">
               Um banco traseiro que funciona como seu escritório.
-            </h3>
+            </h2>
           </div>
         </div>
 
@@ -32,9 +32,9 @@ export default function SplitSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">
             <span className="eyebrow text-sos">SOS</span>
-            <h3 className="mt-3 max-w-md text-[clamp(1.6rem,3vw,2.6rem)] font-medium leading-tight text-foreground">
+            <h2 className="mt-3 max-w-md text-[clamp(1.6rem,3vw,2.6rem)] font-medium leading-tight text-foreground">
               Quando a noite decide diferente — a gente se move.
-            </h3>
+            </h2>
           </div>
         </div>
       </div>

@@ -93,7 +93,7 @@ export default function SeoContentSection() {
                 <p className="text-ink-500 leading-relaxed mb-4">
                   Nosso serviço de SOS automotivo oferece resposta rápida para
                   emergências rodoviárias. De troca de pneus furados e partida
-                  auxiliar de bateria a reboque de emergência e entrega de
+                   auxiliar de bateria, assistência de emergência e entrega de
                   combustível, nossos técnicos treinados estão equipados para
                   resolver diversos problemas automotivos no local.
                 </p>
