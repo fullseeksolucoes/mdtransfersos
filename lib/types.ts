@@ -61,6 +61,17 @@ export interface CoverageRoute {
   to: string;
 }
 
+export interface CityContent {
+  slug: string;
+  name: string;
+  state: string;
+  metaTitle: string;
+  metaDescription: string;
+  heroHeadline: string;
+  heroSubtext: string;
+  paragraphs: string[];
+}
+
 export interface SiteConfig {
   name: string;
   initials: string;

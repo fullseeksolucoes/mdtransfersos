@@ -8,7 +8,15 @@ import DashboardCircle from "@/components/shared/DashboardCircle";
 const WHATSAPP_SOS = site.whatsappSOSLink;
 const WHATSAPP_TRANSFER = site.whatsappTransferLink;
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  cityName?: string;
+  subtext?: string;
+}
+
+export default function HeroSection({
+  cityName = "Joinville",
+  subtext,
+}: HeroSectionProps) {
   return (
     <section
       id="top"
@@ -58,12 +66,13 @@ export default function HeroSection() {
               className="rise mt-6 text-balance text-[clamp(2.6rem,7vw,5.8rem)] font-medium leading-[0.98] tracking-[-0.02em] text-foreground"
               style={{ animationDelay: "0.1s" }}
             >
-              Transfer Executivo
+              Transfer Executivo &amp;{" "}
+              <span className="font-light italic text-gold">SOS Automotivo</span>
               <br />
+              em{" "}
               <span className="inline-flex items-baseline gap-3">
-                <span className="font-light italic text-gold">&amp; SOS</span>
                 <span className="relative">
-                  Joinville
+                  {cityName}
                   <span className="absolute -right-3 top-1.5 flex h-2 w-2">
                     <span className="absolute inline-flex h-full w-full rounded-full bg-sos opacity-75 gps-ping" />
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-sos" />
@@ -76,9 +85,8 @@ export default function HeroSection() {
               className="rise mt-8 max-w-xl text-[1.05rem] leading-relaxed text-muted-foreground"
               style={{ animationDelay: "0.25s" }}
             >
-              Transfers com motorista para executivos e suporte rodoviário de
-              emergência — operados por uma única equipe discreta. Um número.
-              Zero concessões.
+              {subtext ||
+                "Transfers com motorista para executivos e suporte rodoviário de emergência — operados por uma única equipe discreta. Um número. Zero concessões."}
             </p>
 
             <div
@@ -105,13 +113,15 @@ export default function HeroSection() {
                 </svg>
               </a>
 
-              <Link
-                href="#services"
+              <a
+                href={WHATSAPP_TRANSFER}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-2 py-3.5 text-[0.85rem] font-medium tracking-wide text-foreground/90 transition-colors hover:text-gold"
               >
                 Agendar transfer
                 <span className="h-px w-8 bg-foreground/60 transition-all group-hover:w-12" />
-              </Link>
+              </a>
             </div>
           </div>
 

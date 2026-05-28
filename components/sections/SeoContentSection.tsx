@@ -3,8 +3,18 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { seoContent } from "@/lib/data";
 
-export default function SeoContentSection() {
+interface SeoContentSectionProps {
+  city?: string;
+  paragraphs?: string[];
+}
+
+export default function SeoContentSection({
+  city,
+  paragraphs,
+}: SeoContentSectionProps) {
+  const content = paragraphs || seoContent.paragraphs;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -48,21 +58,20 @@ export default function SeoContentSection() {
             >
               <article>
                 <h3 className="text-xl font-semibold text-ink-800 mb-4">
-                  Serviços de Transfer Executivo
+                  {city
+                    ? `Transfer Executivo em ${city}`
+                    : "Serviços de Transfer Executivo"}
                 </h3>
-                <p className="text-ink-500 leading-relaxed mb-4">
-                  Nosso serviço de transfer executivo oferece soluções de
-                  transporte premium para profissionais de negócios e viajantes
-                  exigentes. Com uma frota de veículos de luxo bem mantidos e
-                  motoristas profissionais, garantimos transporte pontual,
-                  confortável e discreto para todas as suas necessidades.
-                </p>
-                <p className="text-ink-500 leading-relaxed">
-                  Seja para transfers de aeroporto, transporte corporativo ou
-                  eventos especiais, nossa equipe entrega excelência
-                  consistente. Monitoramos horários de voos para pickups no
-                  aeroporto, garantindo coordenação perfeita mesmo com atrasos.
-                </p>
+                {content.length > 0 && (
+                  <p className="text-ink-500 leading-relaxed mb-4">
+                    {content[0]}
+                  </p>
+                )}
+                {content.length > 1 && (
+                  <p className="text-ink-500 leading-relaxed">
+                    {content[1]}
+                  </p>
+                )}
               </article>
 
               <article>
@@ -88,7 +97,9 @@ export default function SeoContentSection() {
             >
               <article>
                 <h3 className="text-xl font-semibold text-ink-800 mb-4">
-                  Assistência Rodoviária 24/7
+                  {city
+                    ? `Assistência Rodoviária em ${city}`
+                    : "Assistência Rodoviária 24/7"}
                 </h3>
                 <p className="text-ink-500 leading-relaxed mb-4">
                   Nosso serviço de SOS automotivo oferece resposta rápida para

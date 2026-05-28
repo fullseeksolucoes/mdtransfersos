@@ -19,11 +19,14 @@ export const site: SiteConfig = {
   phoneDisplay: "47 99677-1229 (SOS) · 47 99995-9607 (Transfer)",
   email: "",
   whatsapp: "+5547996771229",
-  whatsappLink: "https://wa.me/5547996771229",
+  whatsappLink:
+    "https://wa.me/5547996771229?text=Ol%C3%A1!%20Preciso%20de%20assist%C3%AAncia%20SOS%20automotiva.",
   whatsappSOS: "+5547996771229",
-  whatsappSOSLink: "https://wa.me/5547996771229",
+  whatsappSOSLink:
+    "https://wa.me/5547996771229?text=Ol%C3%A1!%20Preciso%20de%20assist%C3%AAncia%20SOS%20automotiva.",
   whatsappTransfer: "+5547999959607",
-  whatsappTransferLink: "https://wa.me/5547999959607",
+  whatsappTransferLink:
+    "https://wa.me/5547999959607?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20transfer%20executivo.",
   address: "Joinville e região",
 };
 
@@ -182,8 +185,191 @@ export const coverageRoutes: CoverageRoute[] = [
   { from: "Aeroporto de Joinville", to: "Centro de Joinville" },
   { from: "Aeroporto de Joinville", to: "Distritos Comerciais" },
   { from: "Aeroporto de Navegantes", to: "Joinville" },
+  { from: "Joinville", to: "Navegantes" },
   { from: "Joinville", to: "São Francisco do Sul" },
+  { from: "Joinville", to: "Jaraguá do Sul" },
   { from: "Joinville", to: "Porto de Itapoá" },
+  { from: "Joinville", to: "Araquari" },
+];
+
+import type { CityContent } from "./types";
+
+export const cityPages: CityContent[] = [
+  {
+    slug: "joinville",
+    name: "Joinville",
+    state: "SC",
+    metaTitle: "Transfer Executivo em Joinville | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo premium e SOS automotivo em Joinville. Motorista particular, carro com motorista e assistência rodoviária 24h. Solicite pelo WhatsApp.",
+    heroHeadline: "Transfer Executivo &amp; SOS Joinville",
+    heroSubtext:
+      "Transfers com motorista para executivos e suporte rodoviário de emergência em Joinville — operados por uma única equipe discreta. Um número. Zero concessões.",
+    paragraphs: [
+      "A MD Transfers & SOS é referência em transfer executivo e SOS automotivo em Joinville. Somos a melhor opção para quem busca motorista particular de confiança e carro com motorista profissional na cidade. Atendemos toda a região metropolitana com veículos executivos selecionados e suporte de emergência 24 horas.",
+      "Seja para transfer de aeroporto, transporte corporativo ou assistência rodoviária em Joinville, nossa equipe garante pontualidade, discrição e profissionalismo. Operamos 24 horas com frota própria e resposta rápida para emergências.",
+    ],
+  },
+  {
+    slug: "navegantes",
+    name: "Navegantes",
+    state: "SC",
+    metaTitle: "Transfer para Aeroporto de Navegantes | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo para o Aeroporto de Navegantes (Minister Victor Konder). Motorista particular de Joinville para Navegantes e vice-versa. Conforto e pontualidade.",
+    heroHeadline: "Transfer &amp; SOS Navegantes",
+    heroSubtext:
+      "Transfers executivos para o Aeroporto de Navegantes, com motorista particular e monitoramento de voo em tempo real. Suporte SOS também disponível na região.",
+    paragraphs: [
+      "Precisa de transfer executivo para o Aeroporto Internacional de Navegantes (Minister Victor Konder)? A MD Transfers oferece o transporte mais confiável entre Joinville e Navegantes, com motoristas profissionais, veículos premium e monitoramento de voo em tempo real.",
+      "Nossa rota Joinville-Navegantes é uma das mais solicitadas. Garantimos busca no desembarque com placa de nome, auxílio com bagagem e conforto absoluto durante todo o trajeto de aproximadamente 60 minutos pela BR-101.",
+    ],
+  },
+  {
+    slug: "sao-francisco-do-sul",
+    name: "São Francisco do Sul",
+    state: "SC",
+    metaTitle:
+      "Transfer Executivo em São Francisco do Sul | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em São Francisco do Sul. Motorista particular, van executiva e assistência 24h na cidade e litoral norte de SC.",
+    heroHeadline: "Transfer &amp; SOS São Francisco do Sul",
+    heroSubtext:
+      "Transfers executivos e assistência SOS em São Francisco do Sul. Motorista particular para viagens de negócios e lazer na cidade histórica do litoral catarinense.",
+    paragraphs: [
+      "A MD Transfers & SOS atende São Francisco do Sul com transfers executivos e assistência rodoviária. Seja para visitar o centro histórico, o Porto de São Francisco ou as praias da região, oferecemos motorista particular com veículos premium.",
+      "Nossa equipe conhece a cidade e as rotas do litoral norte catarinense. Ideal para transfers do Aeroporto de Joinville ou Navegantes até São Francisco do Sul, com conforto e pontualidade.",
+    ],
+  },
+  {
+    slug: "jaragua-do-sul",
+    name: "Jaraguá do Sul",
+    state: "SC",
+    metaTitle: "Transfer Executivo em Jaraguá do Sul | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em Jaraguá do Sul. Motorista particular para eventos corporativos e turismo. Assistência rodoviária 24h na cidade.",
+    heroHeadline: "Transfer &amp; SOS Jaraguá do Sul",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em Jaraguá do Sul. Motorista particular certificado para levar você a negócios ou lazer na segunda maior cidade da região.",
+    paragraphs: [
+      "A MD Transfers & SOS oferece transfer executivo e assistência rodoviária em Jaraguá do Sul. Atendemos executivos, turistas e moradores com frota premium e motoristas profissionais. Ideal para transfers corporativos e transporte para eventos na cidade.",
+      "Jaraguá do Sul é um polo industrial importante de Santa Catarina, e estamos prontos para atender sua demanda de mobilidade executiva na cidade — com a mesma excelência que entregamos em Joinville.",
+    ],
+  },
+  {
+    slug: "araquari",
+    name: "Araquari",
+    state: "SC",
+    metaTitle: "Transfer Executivo em Araquari | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em Araquari. Motorista particular, carro executivo e assistência 24h. Atendimento em toda a cidade e região.",
+    heroHeadline: "Transfer &amp; SOS Araquari",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em Araquari. Motorista particular para viagens corporativas e assistência rodoviária de emergência.",
+    paragraphs: [
+      "A MD Transfers & SOS está presente em Araquari com serviços de transfer executivo e SOS automotivo. Ideal para moradores e visitantes da cidade que buscam transporte premium com motorista particular ou precisam de assistência rodoviária rápida.",
+      "Atendemos transfers do Aeroporto de Joinville para Araquari e rotas dentro da região metropolitana, sempre com veículos executivos e motoristas profissionais certificados.",
+    ],
+  },
+  {
+    slug: "guaramirim",
+    name: "Guaramirim",
+    state: "SC",
+    metaTitle: "Transfer Executivo em Guaramirim | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em Guaramirim. Motorista particular e assistência rodoviária 24h. Conforto e segurança no Vale do Itapocu.",
+    heroHeadline: "Transfer &amp; SOS Guaramirim",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em Guaramirim. Motorista particular premium para suas viagens na região do Vale do Itapocu.",
+    paragraphs: [
+      "A MD Transfers & SOS oferece transfer executivo e assistência rodoviária em Guaramirim. Atendemos moradores e empresas da cidade com frota premium, motoristas profissionais e suporte SOS 24 horas. Conte com a gente para suas viagens na região.",
+    ],
+  },
+  {
+    slug: "itapoa",
+    name: "Itapoá",
+    state: "SC",
+    metaTitle: "Transfer Executivo em Itapoá | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em Itapoá. Motorista particular, van executiva e assistência rodoviária 24h. Porto de Itapoá e praias da região.",
+    heroHeadline: "Transfer &amp; SOS Itapoá",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em Itapoá. Motorista particular para viagens de negócios ao Porto de Itapoá ou lazer nas praias do litoral norte.",
+    paragraphs: [
+      "A MD Transfers & SOS atende Itapoá com transfers executivos e assistência rodoviária. Seja para embarque no Porto de Itapoá, visita às praias ou transporte corporativo, oferecemos motorista particular com veículos selecionados e suporte 24 horas.",
+    ],
+  },
+  {
+    slug: "garuva",
+    name: "Garuva",
+    state: "SC",
+    metaTitle: "Transfer Executivo em Garuva | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em Garuva. Motorista particular e assistência rodoviária 24h na divisa de SC com PR.",
+    heroHeadline: "Transfer &amp; SOS Garuva",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em Garuva. Motorista particular para viagens na divisa de Santa Catarina com o Paraná.",
+    paragraphs: [
+      "A MD Transfers & SOS oferece transfer executivo e assistência rodoviária em Garuva. Atendemos a cidade com frota premium e motoristas profissionais, além de suporte SOS automotivo 24 horas para emergências na região.",
+    ],
+  },
+  {
+    slug: "balneario-barra-do-sul",
+    name: "Balneário Barra do Sul",
+    state: "SC",
+    metaTitle:
+      "Transfer Executivo em Balneário Barra do Sul | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em Balneário Barra do Sul. Motorista particular e assistência 24h no litoral norte de SC.",
+    heroHeadline: "Transfer &amp; SOS Balneário Barra do Sul",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em Balneário Barra do Sul. Motorista particular para viagens de lazer ao litoral norte catarinense.",
+    paragraphs: [
+      "A MD Transfers & SOS atende Balneário Barra do Sul com transfers executivos e assistência rodoviária. Ideal para quem busca motorista particular para viagens à praia ou precisa de suporte SOS automotivo na região litorânea.",
+    ],
+  },
+  {
+    slug: "sao-bento-do-sul",
+    name: "São Bento do Sul",
+    state: "SC",
+    metaTitle: "Transfer Executivo em São Bento do Sul | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em São Bento do Sul. Motorista particular e assistência rodoviária 24h no Planalto Norte Catarinense.",
+    heroHeadline: "Transfer &amp; SOS São Bento do Sul",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em São Bento do Sul. Motorista particular premium para o Planalto Norte Catarinense.",
+    paragraphs: [
+      "A MD Transfers & SOS oferece transfer executivo e assistência rodoviária em São Bento do Sul. Seja para viagens corporativas ou pessoais, garantimos transporte premium com motoristas profissionais e suporte SOS 24 horas na região do Planalto Norte.",
+    ],
+  },
+  {
+    slug: "campo-alegre",
+    name: "Campo Alegre",
+    state: "SC",
+    metaTitle: "Transfer Executivo em Campo Alegre | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em Campo Alegre. Motorista particular e assistência rodoviária 24h na serra catarinense.",
+    heroHeadline: "Transfer &amp; SOS Campo Alegre",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em Campo Alegre. Motorista particular para viagens à serra catarinense com conforto e segurança.",
+    paragraphs: [
+      "A MD Transfers & SOS atende Campo Alegre com transfers executivos e assistência rodoviária. Conte com motorista particular para suas viagens à serra e suporte SOS automotivo 24 horas na cidade e arredores.",
+    ],
+  },
+  {
+    slug: "rio-negrinho",
+    name: "Rio Negrinho",
+    state: "SC",
+    metaTitle: "Transfer Executivo em Rio Negrinho | MD Transfers & SOS",
+    metaDescription:
+      "Transfer executivo e SOS automotivo em Rio Negrinho. Motorista particular e assistência rodoviária 24h no Planalto Norte.",
+    heroHeadline: "Transfer &amp; SOS Rio Negrinho",
+    heroSubtext:
+      "Transfers executivos e suporte SOS em Rio Negrinho. Motorista particular premium para o Planalto Norte Catarinense.",
+    paragraphs: [
+      "A MD Transfers & SOS oferece transfer executivo e assistência rodoviária em Rio Negrinho. Atendemos a cidade com frota de veículos executivos, motoristas profissionais e suporte SOS automotivo disponível 24 horas.",
+    ],
+  },
 ];
 
 export const seoContent = {
@@ -200,7 +386,8 @@ export const ctaContent = {
   headline: "Pronto para Experimentar Mobilidade Premium?",
   subheadline:
     "Uma chamada conecta você à rede mais confiável de transporte executivo e emergência rodoviária de Joinville e região.",
-  whatsappMessage: "Olá! Gostaria de solicitar um serviço.",
+  whatsappMessage:
+    "Olá!%20Gostaria%20de%20solicitar%20um%20transfer%20executivo.",
 };
 
 /* ── Section data ── */
@@ -283,7 +470,8 @@ export const fleetVehicles: FleetVehicle[] = [
       ["Motor", "1.4 250 TSI Turbo Flex"],
       ["Potência", "150 cv"],
     ],
-    whatsappLink: "https://wa.me/5547999959607",
+    whatsappLink:
+      "https://wa.me/5547999959607?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20transfer%20executivo.",
   },
   {
     id: "onix-turbo",
@@ -297,7 +485,8 @@ export const fleetVehicles: FleetVehicle[] = [
       ["Motor", "1.0 Turbo Flex"],
       ["Potência", "116 cv"],
     ],
-    whatsappLink: "https://wa.me/5547996771229",
+    whatsappLink:
+      "https://wa.me/5547996771229?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20transfer%20executivo.",
   },
 ];
 
@@ -332,58 +521,68 @@ export const howItWorksSteps: HowItWorksStep[] = [
 export interface FAQItem {
   question: string;
   answer: string;
-  category: 'transfer' | 'sos';
+  category: "transfer" | "sos";
 }
 
 export const faqData: FAQItem[] = [
   {
     question: "Com quanta antecedência preciso agendar um transfer?",
-    answer: "Recomendamos o agendamento com pelo menos 2 horas de antecedência para transfers executivos. Para o Aeroporto de Navegantes ou horários de pico, sugerimos 24h. Aceitamos solicitações de última hora conforme disponibilidade — consulte pelo WhatsApp.",
+    answer:
+      "Recomendamos o agendamento com pelo menos 2 horas de antecedência para transfers executivos. Para o Aeroporto de Navegantes ou horários de pico, sugerimos 24h. Aceitamos solicitações de última hora conforme disponibilidade — consulte pelo WhatsApp.",
     category: "transfer",
   },
   {
     question: "Quanto custa o serviço de transfer executivo?",
-    answer: "O valor varia conforme distância, veículo e horário. Trabalhamos com preço fechado sem surpresas — sem taxímetro. Solicite um orçamento gratuito pelo WhatsApp e receba o valor exato antes de confirmar.",
+    answer:
+      "O valor varia conforme distância, veículo e horário. Trabalhamos com preço fechado sem surpresas — sem taxímetro. Solicite um orçamento gratuito pelo WhatsApp e receba o valor exato antes de confirmar.",
     category: "transfer",
   },
   {
     question: "Como funciona o monitoramento de voos?",
-    answer: "Acompanhamos seu voo em tempo real pelo código de reserva. Se houver atraso ou antecipação, ajustamos automaticamente o horário do motorista. Você não paga nada a mais por atrasos — o motorista espera o tempo que for necessário.",
+    answer:
+      "Acompanhamos seu voo em tempo real pelo código de reserva. Se houver atraso ou antecipação, ajustamos automaticamente o horário do motorista. Você não paga nada a mais por atrasos — o motorista espera o tempo que for necessário.",
     category: "transfer",
   },
   {
     question: "Quais formas de pagamento são aceitas?",
-    answer: "Aceitamos dinheiro, cartão de crédito/débito (na hora ou faturado), PIX e transferência bancária. Para clientes corporativos, oferecemos faturamento mensal com nota fiscal.",
+    answer:
+      "Aceitamos dinheiro, cartão de crédito/débito (na hora ou faturado), PIX e transferência bancária. Para clientes corporativos, oferecemos faturamento mensal com nota fiscal.",
     category: "transfer",
   },
   {
     question: "Atendem fora de Joinville?",
-    answer: "Sim. Fazemos transfers para toda a região metropolitana de Joinville, incluindo Araquari, São Francisco do Sul, Itapoá, Jaraguá do Sul, Guaramirim e principalmente o Aeroporto de Navegantes. Consulte-nos para destinos em Santa Catarina.",
+    answer:
+      "Sim. Fazemos transfers para toda a região metropolitana de Joinville, incluindo Araquari, São Francisco do Sul, Itapoá, Jaraguá do Sul, Guaramirim e principalmente o Aeroporto de Navegantes. Consulte-nos para destinos em Santa Catarina.",
     category: "transfer",
   },
   {
     question: "Quanto tempo o SOS leva para chegar?",
-    answer: "Nosso tempo médio de resposta é inferior a 20 minutos na região metropolitana de Joinville. Unidades de atendimento ficam estrategicamente posicionadas em pontos estratégicos da cidade para garantir o menor tempo de chegada possível.",
+    answer:
+      "Nosso tempo médio de resposta é inferior a 20 minutos na região metropolitana de Joinville. Unidades de atendimento ficam estrategicamente posicionadas em pontos estratégicos da cidade para garantir o menor tempo de chegada possível.",
     category: "sos",
   },
   {
     question: "Quais serviços o SOS Automotivo inclui?",
-    answer: "Oferecemos troca de pneus, remendo e enchimento de pneu furado, recarga de bateria (chupeta), assistência em travamento e entrega de combustível. Não realizamos reboque ou guincho. Cada serviço é realizado por técnicos treinados com equipamento profissional.",
+    answer:
+      "Oferecemos troca de pneus, remendo e enchimento de pneu furado, recarga de bateria (chupeta), assistência em travamento e entrega de combustível. Não realizamos reboque ou guincho. Cada serviço é realizado por técnicos treinados com equipamento profissional.",
     category: "sos",
   },
   {
     question: "Como solicitar o SOS Automotivo?",
-    answer: "Ligue ou envie WhatsApp para (47) 99677-1229. Informe sua localização e o problema. Nossa central despacha a unidade mais próxima em segundos, e você recebe a previsão de chegada em tempo real com rastreamento GPS.",
+    answer:
+      "Ligue ou envie WhatsApp para (47) 99677-1229. Informe sua localização e o problema. Nossa central despacha a unidade mais próxima em segundos, e você recebe a previsão de chegada em tempo real com rastreamento GPS.",
     category: "sos",
   },
   {
     question: "O SOS atende 24 horas, inclusive feriados?",
-    answer: "Sim. Nossa central de emergência opera 24 horas por dia, 7 dias por semana, incluindo feriados. Panes não seguem horário comercial — e nós também não.",
+    answer:
+      "Sim. Nossa central de emergência opera 24 horas por dia, 7 dias por semana, incluindo feriados. Panes não seguem horário comercial — e nós também não.",
     category: "sos",
   },
   {
     question: "Vocês atendem na estrada ou só em áreas urbanas?",
-    answer: "Atendemos tanto em áreas urbanas quanto em rodovias de acesso da região metropolitana de Joinville. Se você está em uma via de acesso dentro da nossa área de cobertura, podemos ajudar.",
+    answer:
+      "Atendemos tanto em áreas urbanas quanto em rodovias de acesso da região metropolitana de Joinville. Se você está em uma via de acesso dentro da nossa área de cobertura, podemos ajudar.",
     category: "sos",
   },
 ];

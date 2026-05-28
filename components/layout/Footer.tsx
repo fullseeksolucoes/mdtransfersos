@@ -1,9 +1,22 @@
 "use client";
 
 import { Phone, MapPin, MessageCircle } from "lucide-react";
-import { site, navLinks } from "@/lib/data";
+import { site, navLinks, cityPages } from "@/lib/data";
 import Container from "@/components/shared/Container";
 import Link from "next/link";
+
+const footerCities = cityPages
+  .filter((c) =>
+    [
+      "joinville",
+      "navegantes",
+      "sao-francisco-do-sul",
+      "jaragua-do-sul",
+      "araquari",
+      "itapoa",
+    ].includes(c.slug),
+  )
+  .slice(0, 6);
 
 export default function Footer() {
   return (
@@ -12,7 +25,7 @@ export default function Footer() {
 
       <Container className="py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-4">
             <Link
               href="/"
               className="text-2xl font-medium tracking-tight text-white"
@@ -25,7 +38,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-2">
             <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/30 mb-6">
               Serviços
             </h3>
@@ -43,7 +56,25 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
+            <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/30 mb-6">
+              Cidades
+            </h3>
+            <ul className="space-y-3">
+              {footerCities.map((city) => (
+                <li key={city.slug}>
+                  <Link
+                    href={`/cidade/${city.slug}`}
+                    className="text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
+                  >
+                    {city.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-3">
             <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/30 mb-6">
               Contato
             </h3>
