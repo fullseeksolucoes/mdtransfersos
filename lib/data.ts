@@ -3,10 +3,7 @@ import type {
   NavLink,
   ServiceContent,
   JourneyStep,
-  TrustMetric,
-  Testimonial,
-  CoverageCity,
-  CoverageRoute,
+  CityContent,
 } from "./types";
 
 export const site: SiteConfig = {
@@ -37,20 +34,12 @@ export const navLinks: NavLink[] = [
   { label: "Contato", href: "#book" },
 ];
 
-export const hero = {
-  headline: "Além do Transporte. Sem Limites.",
-  subheadline:
-    "Transfers executivos premium combinados com assistência rodoviária de resposta rápida. Uma chamada — mobilidade completa garantida.",
-  ctaPrimary: "Agendar Transfer Executivo",
-  ctaSecondary: "SOS Emergência",
-};
-
 export const executiveService: ServiceContent = {
   title: "Transfer Executivo",
   subtitle: "Soluções Premium de Mobilidade",
   tagline: "Cada jornada reflete quem você é.",
   description:
-    "Experimente o auge do transporte executivo. De transfers de aeroporto a eventos corporativos, cada viagem é criada para o profissional exigente que demanda mais do que um carro — exige uma declaração.",
+    "Experimente o auge do transporte executivo. De transfers de aeroporto a eventos corporativos, cada viagem é pensada para o profissional que exige mais que um simples deslocamento.",
   features: [
     {
       title: "Excelência em Chauffeur",
@@ -91,7 +80,7 @@ export const sosService: ServiceContent = {
     {
       title: "Suporte Rodoviário Completo",
       description:
-        "De troca de pneus a entrega de combustível, de partida auxiliar a assistência em travamento — cuidamos de tudo.",
+        "De troca de pneus a entrega de combustível, de partida auxiliar a assistência em travamento. Cuidamos de tudo.",
     },
     {
       title: "Central de Emergência 24/7",
@@ -133,66 +122,10 @@ export const journeySteps: JourneyStep[] = [
     step: "04",
     title: "Chegar",
     description:
-      "Experimente mobilidade premium da coleta ao destino — com segurança e pontualidade.",
+      "Experimente mobilidade premium da coleta ao destino, com segurança e pontualidade.",
     icon: "flag",
   },
 ];
-
-export const trustMetrics: TrustMetric[] = [
-  { value: "24 / 7", label: "Suporte 24 Horas" },
-  { value: "< 15 min", label: "Tempo Médio SOS" },
-  { value: "500+", label: "Clientes Corporativos" },
-  { value: "100%", label: "Padrão Frota Profissional" },
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    name: "Rafael Monteiro",
-    role: "CEO — Monteiro Holdings",
-    content:
-      "A MD Transfers redefiniu o que espero do transporte executivo. O S-Class que enviaram para minha reunião do conselho estava impecável, o motorista antecipava cada curva. É assim que a mobilidade deveria ser.",
-    rating: 5,
-    highlight: "O S-Class estava impecável.",
-  },
-  {
-    name: "Carla Mendes",
-    role: "VP Operations — Innova Group",
-    content:
-      "Quando meu carro quebrou na rodovia à meia-noite, o MD SOS chegou em 11 minutos. Onze minutos. O profissionalismo e a velocidade foram extraordinários. Nunca me senti tão segura na estrada.",
-    rating: 5,
-    highlight: "MD SOS chegou em 11 minutos.",
-  },
-  {
-    name: "Dr. Fernando Alves",
-    role: "Diretor Médico — Hospital São Lucas",
-    content:
-      "Confiámos à MD Transfers os transfers dos nossos pacientes VIP. A confiabilidade, discrição e padrões de higiene dos veículos superam nossas expectativas todas as vezes.",
-    rating: 5,
-    highlight: "Confiabilidade e discrição superam expectativas.",
-  },
-];
-
-export const coverageCities: CoverageCity[] = [
-  { city: "Joinville", region: "Região Metropolitana" },
-  { city: "Araquari", region: "Norte Catarinense" },
-  { city: "São Francisco do Sul", region: "Litoral Norte" },
-  { city: "Itapoá", region: "Litoral Norte" },
-  { city: "Jaraguá do Sul", region: "Vale do Itapocu" },
-  { city: "Guaramirim", region: "Vale do Itapocu" },
-];
-
-export const coverageRoutes: CoverageRoute[] = [
-  { from: "Aeroporto de Joinville", to: "Centro de Joinville" },
-  { from: "Aeroporto de Joinville", to: "Distritos Comerciais" },
-  { from: "Aeroporto de Navegantes", to: "Joinville" },
-  { from: "Joinville", to: "Navegantes" },
-  { from: "Joinville", to: "São Francisco do Sul" },
-  { from: "Joinville", to: "Jaraguá do Sul" },
-  { from: "Joinville", to: "Porto de Itapoá" },
-  { from: "Joinville", to: "Araquari" },
-];
-
-import type { CityContent } from "./types";
 
 export const cityPages: CityContent[] = [
   {
@@ -204,7 +137,7 @@ export const cityPages: CityContent[] = [
       "Transfer executivo premium e SOS automotivo em Joinville. Motorista particular, carro com motorista e assistência rodoviária 24h. Solicite pelo WhatsApp.",
     heroHeadline: "Transfer Executivo &amp; SOS Joinville",
     heroSubtext:
-      "Transfers com motorista para executivos e suporte rodoviário de emergência em Joinville — operados por uma única equipe discreta. Um número. Zero concessões.",
+      "Transfers com motorista para executivos e suporte rodoviário de emergência em Joinville. Operados por uma única equipe discreta. Um número. Zero concessões.",
     paragraphs: [
       "A MD Transfers & SOS é referência em transfer executivo e SOS automotivo em Joinville. Somos a melhor opção para quem busca motorista particular de confiança e carro com motorista profissional na cidade. Atendemos toda a região metropolitana com veículos executivos selecionados e suporte de emergência 24 horas.",
       "Seja para transfer de aeroporto, transporte corporativo ou assistência rodoviária em Joinville, nossa equipe garante pontualidade, discrição e profissionalismo. Operamos 24 horas com frota própria e resposta rápida para emergências.",
@@ -253,7 +186,7 @@ export const cityPages: CityContent[] = [
       "Transfers executivos e suporte SOS em Jaraguá do Sul. Motorista particular certificado para levar você a negócios ou lazer na segunda maior cidade da região.",
     paragraphs: [
       "A MD Transfers & SOS oferece transfer executivo e assistência rodoviária em Jaraguá do Sul. Atendemos executivos, turistas e moradores com frota premium e motoristas profissionais. Ideal para transfers corporativos e transporte para eventos na cidade.",
-      "Jaraguá do Sul é um polo industrial importante de Santa Catarina, e estamos prontos para atender sua demanda de mobilidade executiva na cidade — com a mesma excelência que entregamos em Joinville.",
+      "Jaraguá do Sul é um polo industrial importante de Santa Catarina, e estamos prontos para atender sua demanda de mobilidade executiva na cidade com a mesma excelência que entregamos em Joinville.",
     ],
   },
   {
@@ -375,7 +308,7 @@ export const cityPages: CityContent[] = [
 export const seoContent = {
   title: "Transfer Executivo Premium e Assistência Rodoviária em Joinville",
   paragraphs: [
-    "A MD Transfers & SOS é líder em transfer executivo e assistência rodoviária em Joinville e região. Somos a melhor opção para quem busca motorista particular de confiança, carro com motorista profissional e suporte automotivo de emergência — tudo com um padrão premium de atendimento.",
+    "A MD Transfers & SOS é líder em transfer executivo e assistência rodoviária em Joinville e região. Somos a melhor opção para quem busca motorista particular de confiança, carro com motorista profissional e suporte automotivo de emergência. Tudo com um padrão premium de atendimento.",
     "Nosso serviço de transfer executivo cobre toda a região metropolitana de Joinville, incluindo o Aeroporto Lauro Carneiro de Loyola, o Aeroporto de Navegantes (Minister Victor Konder), distritos comerciais e áreas residenciais nobres. Fazemos transfers para toda Santa Catarina com frota de veículos executivos selecionados para conforto, estilo e apresentação profissional.",
     "Para motoristas e frotistas, nossa divisão SOS Automotivo oferece a rede de assistência rodoviária mais ágil da região. Com unidades de resposta rápida estrategicamente localizadas, despacho com rastreamento GPS e coordenação 24/7, entregamos tranquilidade mensurável em minutos, não em horas. Serviços de troca de pneus, recarga de bateria e reparo de pneu furado estão disponíveis a qualquer hora.",
     "Se você precisa de transporte executivo para uma reunião importante, van executiva para grupo, transfer para o aeroporto de Navegantes ou suporte rodoviário de emergência, a MD Transfers & SOS oferece um padrão único de serviço: excepcional, imediato e profissional.",
@@ -383,7 +316,7 @@ export const seoContent = {
 };
 
 export const ctaContent = {
-  headline: "Pronto para Experimentar Mobilidade Premium?",
+  headline: "Pronto para experimentar mobilidade premium?",
   subheadline:
     "Uma chamada conecta você à rede mais confiável de transporte executivo e emergência rodoviária de Joinville e região.",
   whatsappMessage:
@@ -528,19 +461,19 @@ export const faqData: FAQItem[] = [
   {
     question: "Com quanta antecedência preciso agendar um transfer?",
     answer:
-      "Recomendamos o agendamento com pelo menos 2 horas de antecedência para transfers executivos. Para o Aeroporto de Navegantes ou horários de pico, sugerimos 24h. Aceitamos solicitações de última hora conforme disponibilidade — consulte pelo WhatsApp.",
+      "Recomendamos o agendamento com pelo menos 2 horas de antecedência para transfers executivos. Para o Aeroporto de Navegantes ou horários de pico, sugerimos 24h. Aceitamos solicitações de última hora conforme disponibilidade. Consulte pelo WhatsApp.",
     category: "transfer",
   },
   {
     question: "Quanto custa o serviço de transfer executivo?",
     answer:
-      "O valor varia conforme distância, veículo e horário. Trabalhamos com preço fechado sem surpresas — sem taxímetro. Solicite um orçamento gratuito pelo WhatsApp e receba o valor exato antes de confirmar.",
+      "O valor varia conforme distância, veículo e horário. Trabalhamos com preço fechado, sem taxímetro nem surpresas. Solicite um orçamento gratuito pelo WhatsApp e receba o valor exato antes de confirmar.",
     category: "transfer",
   },
   {
     question: "Como funciona o monitoramento de voos?",
     answer:
-      "Acompanhamos seu voo em tempo real pelo código de reserva. Se houver atraso ou antecipação, ajustamos automaticamente o horário do motorista. Você não paga nada a mais por atrasos — o motorista espera o tempo que for necessário.",
+      "Acompanhamos seu voo em tempo real pelo código de reserva. Se houver atraso ou antecipação, ajustamos automaticamente o horário do motorista. Você não paga nada a mais por atrasos. O motorista espera o tempo que for necessário.",
     category: "transfer",
   },
   {
@@ -576,7 +509,7 @@ export const faqData: FAQItem[] = [
   {
     question: "O SOS atende 24 horas, inclusive feriados?",
     answer:
-      "Sim. Nossa central de emergência opera 24 horas por dia, 7 dias por semana, incluindo feriados. Panes não seguem horário comercial — e nós também não.",
+      "Sim. Nossa central de emergência opera 24 horas por dia, 7 dias por semana, incluindo feriados. Panes não seguem horário comercial, e nós também não.",
     category: "sos",
   },
   {

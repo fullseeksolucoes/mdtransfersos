@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { playfair, inter } from "./fonts";
 import "./globals.css";
-import { site } from "@/lib/data";
+import { site, faqData } from "@/lib/data";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
@@ -10,56 +10,14 @@ const SITE_URL = "https://www.mdtransfersos.com.br";
 
 const faqSchema = {
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Com quanta antecedência preciso agendar um transfer?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Recomendamos o agendamento com pelo menos 2 horas de antecedência para transfers executivos. Para o Aeroporto de Navegantes ou horários de pico, sugerimos 24h. Aceitamos solicitações de última hora conforme disponibilidade.',
-      },
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
     },
-    {
-      '@type': 'Question',
-      name: 'Quanto custa o serviço de transfer executivo?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'O valor varia conforme distância, veículo e horário. Trabalhamos com preço fechado sem surpresas — sem taxímetro. Solicite um orçamento gratuito pelo WhatsApp e receba o valor exato antes de confirmar.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quanto tempo o SOS leva para chegar?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Nosso tempo médio de resposta é inferior a 20 minutos na região metropolitana de Joinville. Unidades de atendimento ficam estrategicamente posicionadas em pontos estratégicos da cidade.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Quais serviços o SOS Automotivo inclui?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Oferecemos troca de pneus, remendo e enchimento de pneu furado, recarga de bateria (chupeta), assistência em travamento e entrega de combustível. Não realizamos reboque ou guincho.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Atendem fora de Joinville?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim. Fazemos transfers para toda a região metropolitana de Joinville, incluindo Araquari, São Francisco do Sul, Itapoá, Jaraguá do Sul, Guaramirim e o Aeroporto de Navegantes.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'O SOS atende 24 horas, inclusive feriados?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Sim. Nossa central de emergência opera 24 horas por dia, 7 dias por semana, incluindo feriados.',
-      },
-    },
-  ],
+  })),
 };
 
 const jsonLd = {
@@ -87,7 +45,7 @@ const jsonLd = {
   openingHours: 'Mo-Su 00:00-23:59',
   priceRange: '$$$',
   image: `${SITE_URL}/hero-car.jpg`,
-  sameAs: [site.whatsappLink],
+  sameAs: [],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Serviços',

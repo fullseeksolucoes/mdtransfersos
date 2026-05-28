@@ -33,7 +33,7 @@ export default function SplitSection() {
           <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">
             <span className="eyebrow text-sos">SOS</span>
             <h2 className="mt-3 max-w-md text-[clamp(1.6rem,3vw,2.6rem)] font-medium leading-tight text-foreground">
-              Quando a noite decide diferente — a gente se move.
+              Quando a noite decide diferente, a gente se move.
             </h2>
           </div>
         </div>

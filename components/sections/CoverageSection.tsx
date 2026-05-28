@@ -5,7 +5,11 @@ import Reveal from '@/components/ui/Reveal';
 import CoverageMap from '@/components/shared/CoverageMap';
 import { coverageLocations } from '@/lib/data';
 
-export default function CoverageSection() {
+interface CoverageSectionProps {
+  cityName?: string;
+}
+
+export default function CoverageSection({ cityName = "Joinville" }: CoverageSectionProps) {
   return (
     <section id="coverage" className="relative py-24 md:py-36 bg-surface-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -24,7 +28,7 @@ export default function CoverageSection() {
 
             <Reveal delay={200}>
               <p className="text-ink-500 text-base leading-relaxed mb-10">
-                Com frota própria estrategicamente distribuída pela cidade e
+                Com frota própria estrategicamente distribuída por {cityName.toLowerCase()} e
                 região metropolitana, garantimos tempo de resposta rápido em
                 qualquer ponto.
               </p>

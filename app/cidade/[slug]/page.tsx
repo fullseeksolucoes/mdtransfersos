@@ -61,7 +61,7 @@ export default async function CityPage({
       <SplitSection />
       <FleetSection />
       <HowItWorksSection />
-      <CoverageSection />
+      <CoverageSection cityName={city.name} />
       <TestimonialsSection />
       <SeoContentSection city={city.name} paragraphs={city.paragraphs} />
       <FAQSection />

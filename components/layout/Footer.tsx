@@ -78,46 +78,48 @@ export default function Footer() {
             <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/30 mb-6">
               Contato
             </h3>
-            <ul className="space-y-4">
-              <li>
-                <span className="flex items-center gap-3 text-sm text-white/50 font-body">
-                  <Phone className="w-4 h-4 text-navy-500 shrink-0" />
-                  <span>
-                    <a href={`tel:${site.whatsappSOS}`} className="hover:text-white transition-colors duration-300">47 99677-1229</a> (SOS)
-                    <br />
-                    <a href={`tel:${site.whatsappTransfer}`} className="hover:text-white transition-colors duration-300">47 99995-9607</a> (Transfer)
+            <address className="not-italic">
+              <ul className="space-y-4">
+                <li>
+                  <span className="flex items-center gap-3 text-sm text-white/50 font-body">
+                    <Phone className="w-4 h-4 text-navy-500 shrink-0" />
+                    <span>
+                      <a href={`tel:${site.whatsappSOS}`} className="hover:text-white transition-colors duration-300">47 99677-1229</a> (SOS)
+                      <br />
+                      <a href={`tel:${site.whatsappTransfer}`} className="hover:text-white transition-colors duration-300">47 99995-9607</a> (Transfer)
+                    </span>
                   </span>
-                </span>
-              </li>
-              <li>
-                <span className="flex items-center gap-3 text-sm text-white/50 font-body">
-                  <MapPin className="w-4 h-4 text-navy-500 shrink-0" />
-                  {site.address}
-                </span>
-              </li>
-              <li>
-                <a
-                  href={site.whatsappSOSLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
-                >
-                  <MessageCircle className="w-4 h-4 text-navy-500" />
-                  SOS — 47 99677-1229
-                </a>
-              </li>
-              <li>
-                <a
-                  href={site.whatsappTransferLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
-                >
-                  <MessageCircle className="w-4 h-4 text-navy-500" />
-                  Transfer — 47 99995-9607
-                </a>
-              </li>
-            </ul>
+                </li>
+                <li>
+                  <span className="flex items-center gap-3 text-sm text-white/50 font-body">
+                    <MapPin className="w-4 h-4 text-navy-500 shrink-0" />
+                    {site.address}
+                  </span>
+                </li>
+                <li>
+                  <a
+                    href={site.whatsappSOSLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
+                  >
+                    <MessageCircle className="w-4 h-4 text-navy-500" />
+                    SOS — 47 99677-1229
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={site.whatsappTransferLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
+                  >
+                    <MessageCircle className="w-4 h-4 text-navy-500" />
+                    Transfer — 47 99995-9607
+                  </a>
+                </li>
+              </ul>
+            </address>
           </div>
         </div>
 

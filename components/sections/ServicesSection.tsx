@@ -28,8 +28,8 @@ export default function ServicesSection() {
 
         <Reveal delay={200}>
           <p className="text-ink-500 text-lg max-w-xl mb-20">
-            Do transfer executivo ao suporte de emergência — somos o parceiro de
-            mobilidade que você pode confiar.
+            Do transfer executivo ao suporte de emergência, somos o parceiro de
+            mobilidade em que você pode confiar.
           </p>
         </Reveal>
 

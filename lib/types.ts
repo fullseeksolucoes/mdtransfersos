@@ -17,48 +17,11 @@ export interface ServiceContent {
   accent: 'blue' | 'red';
 }
 
-export interface VehicleSpec {
-  label: string;
-  value: string;
-}
-
-export interface Vehicle {
-  name: string;
-  category: string;
-  tagline: string;
-  image: string;
-  specs: VehicleSpec[];
-  accent: 'blue' | 'red';
-}
-
 export interface JourneyStep {
   step: string;
   title: string;
   description: string;
   icon: string;
-}
-
-export interface TrustMetric {
-  value: string;
-  label: string;
-}
-
-export interface Testimonial {
-  name: string;
-  role: string;
-  content: string;
-  rating: number;
-  highlight: string;
-}
-
-export interface CoverageCity {
-  city: string;
-  region: string;
-}
-
-export interface CoverageRoute {
-  from: string;
-  to: string;
 }
 
 export interface CityContent {

@@ -86,7 +86,7 @@ export default function HeroSection({
               style={{ animationDelay: "0.25s" }}
             >
               {subtext ||
-                "Transfers com motorista para executivos e suporte rodoviário de emergência — operados por uma única equipe discreta. Um número. Zero concessões."}
+                "Transfers com motorista para executivos e suporte rodoviário de emergência. Operados por uma única equipe discreta. Um número. Zero concessões."}
             </p>
 
             <div
