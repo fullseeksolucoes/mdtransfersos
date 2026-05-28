@@ -113,13 +113,13 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-white font-body text-charcoal-800 selection:bg-navy-800/15 selection:text-charcoal-900">
         <a
-          href="#main-content"
+          href="#conteudo-principal"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-white focus:text-charcoal-900 focus:rounded-lg focus:shadow-lg focus:outline-2 focus:outline-navy-600"
         >
           Pular para o conteúdo principal
         </a>
         <Navbar />
-        <main id="main-content" className="flex-1">
+        <main id="conteudo-principal" className="flex-1">
           {children}
         </main>
         <Footer />

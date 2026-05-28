@@ -3,7 +3,7 @@ import { site } from "@/lib/data";
 export default function CTASection() {
   return (
     <section
-      id="book"
+      id="contato"
       className="relative overflow-hidden bg-ink py-32 text-pearl lg:py-44"
     >
       <div

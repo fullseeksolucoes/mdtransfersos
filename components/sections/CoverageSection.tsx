@@ -11,7 +11,7 @@ interface CoverageSectionProps {
 
 export default function CoverageSection({ cityName = "Joinville" }: CoverageSectionProps) {
   return (
-    <section id="coverage" className="relative py-24 md:py-36 bg-surface-50 overflow-hidden">
+    <section id="cobertura" className="relative py-24 md:py-36 bg-surface-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">

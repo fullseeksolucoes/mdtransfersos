@@ -28,10 +28,10 @@ export const site: SiteConfig = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Serviços", href: "#services" },
-  { label: "Frota", href: "#fleet" },
-  { label: "Cobertura", href: "#coverage" },
-  { label: "Contato", href: "#book" },
+  { label: "Serviços", href: "#servicos" },
+  { label: "Frota", href: "#frota" },
+  { label: "Cobertura", href: "#cobertura" },
+  { label: "Contato", href: "#contato" },
 ];
 
 export const executiveService: ServiceContent = {

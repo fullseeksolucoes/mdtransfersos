@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
 
   return (
     <section
-      id="testimonials"
+      id="depoimentos"
       className="relative bg-white py-32 overflow-hidden"
     >
       <div className="absolute inset-0">

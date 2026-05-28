@@ -19,7 +19,7 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section
-      id="top"
+      id="topo"
       className="relative min-h-screen overflow-hidden bg-background"
     >
       <div className="absolute inset-0">

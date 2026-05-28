@@ -113,7 +113,7 @@ export default function Navbar() {
             )}
             aria-label={isMobileOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isMobileOpen}
-            aria-controls="mobile-menu"
+            aria-controls="menu-mobile"
           >
             {isMobileOpen ? (
               <X className="w-6 h-6" />
@@ -135,7 +135,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <div
-              id="mobile-menu"
+              id="menu-mobile"
               className="bg-white/95 backdrop-blur-md border-t border-ink-200 shadow-lg"
             >
               <Container>

@@ -13,7 +13,7 @@ const iconMap: Record<string, LucideIcon> = {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="relative py-24 md:py-36 bg-surface-100 overflow-hidden">
+    <section id="servicos" className="relative py-24 md:py-36 bg-surface-100 overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-ocean-500/5 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-alert-500/5 blur-3xl pointer-events-none" />
 

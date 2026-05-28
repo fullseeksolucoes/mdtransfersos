@@ -4,7 +4,7 @@ import { fleetVehicles } from "@/lib/data";
 
 export default function FleetSection() {
   return (
-    <section id="fleet" className="bg-white py-28 lg:py-40">
+    <section id="frota" className="bg-white py-28 lg:py-40">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <SectionHeader
           eyebrow="A frota"
