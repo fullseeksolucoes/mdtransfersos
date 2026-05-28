@@ -57,7 +57,7 @@ export default function CoverageSection({ cityName = "Joinville" }: CoverageSect
                   <span className="stat-number text-3xl text-ocean-600 block">
                     &lt;30
                   </span>
-                  <span className="text-xs text-ink-400 uppercase tracking-wider">
+                  <span className="text-xs text-ink-500 uppercase tracking-wider">
                     min
                   </span>
                 </div>
@@ -66,7 +66,7 @@ export default function CoverageSection({ cityName = "Joinville" }: CoverageSect
                   <p className="text-ink-700 text-sm font-medium">
                     Tempo médio de chegada
                   </p>
-                  <p className="text-ink-400 text-xs mt-0.5">
+                  <p className="text-ink-500 text-xs mt-0.5">
                     Na região metropolitana
                   </p>
                 </div>

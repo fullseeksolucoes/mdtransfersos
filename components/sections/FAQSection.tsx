@@ -90,7 +90,7 @@ export default function FAQSection() {
                     </span>
                     <ChevronDown
                       className={cn(
-                        'w-5 h-5 text-ink-400 shrink-0 transition-transform duration-300',
+                        'w-5 h-5 text-ink-500 shrink-0 transition-transform duration-300',
                         isOpen && 'rotate-180',
                       )}
                     />

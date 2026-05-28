@@ -39,7 +39,7 @@ export default function FleetSection() {
               <div
                 className={`lg:col-span-4 ${i % 2 === 1 ? "lg:order-1" : ""}`}
               >
-                <div className="text-sm italic text-ink-400">No. 0{i + 1}</div>
+                <div className="text-sm italic text-ink-500">No. 0{i + 1}</div>
                 <h3 className="mt-2 text-3xl font-medium leading-tight text-ink-800">
                   {v.name}
                 </h3>
@@ -48,7 +48,7 @@ export default function FleetSection() {
                 <dl className="mt-8 grid grid-cols-2 gap-y-5 border-t border-ink-200 pt-6">
                   {v.specs.map(([k, val]) => (
                     <div key={k}>
-                      <dt className="text-[10px] font-semibold uppercase tracking-[0.22em] text-ink-400">
+                      <dt className="text-[10px] font-semibold uppercase tracking-[0.22em] text-ink-500">
                         {k}
                       </dt>
                       <dd className="mt-1 text-lg text-ink-800">

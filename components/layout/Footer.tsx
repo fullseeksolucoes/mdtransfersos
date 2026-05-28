@@ -33,13 +33,13 @@ export default function Footer() {
               {site.initials}
               <span className="text-navy-500">.</span>
             </Link>
-            <p className="mt-4 text-sm leading-relaxed text-white/40 font-body max-w-sm">
+            <p className="mt-4 text-sm leading-relaxed text-white/50 font-body max-w-sm">
               {site.description}
             </p>
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/30 mb-6">
+            <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/50 mb-6">
               Serviços
             </h3>
             <ul className="space-y-3">
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/30 mb-6">
+            <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/50 mb-6">
               Cidades
             </h3>
             <ul className="space-y-3">
@@ -75,7 +75,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/30 mb-6">
+            <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/50 mb-6">
               Contato
             </h3>
             <address className="not-italic">
@@ -124,20 +124,20 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/30 font-body">
+          <p className="text-xs text-white/50 font-body">
             &copy; {new Date().getFullYear()} {site.name}. Todos os direitos
             reservados.
           </p>
 
-          <span className="text-xs text-white/30 font-body">
+          <span className="text-xs text-white/50 font-body">
             Desenvolvido por{" "}
             <a
               href="https://www.fullseek.com.br/"
               target="_blank"
               rel="noreferrer"
-              className="text-white/50 hover:text-white transition-colors duration-300"
+             className="text-white/50 hover:text-white underline underline-offset-2 decoration-white/30 transition-colors duration-300"
             >
-              FullSeek
+               FullSeek
             </a>
           </span>
         </div>

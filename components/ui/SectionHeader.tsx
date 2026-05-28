@@ -39,7 +39,7 @@ export default function SectionHeader({
   const isCenter = align === 'center';
   const accentColors = accentMap[accent];
   const titleColor = dark ? 'text-foreground' : 'text-ink-800';
-  const subtitleColor = dark ? 'text-muted-foreground/80' : 'text-ink-400';
+  const subtitleColor = dark ? 'text-muted-foreground/80' : 'text-ink-500';
 
   const content = (
     <header className={cn(isCenter && 'text-center', className)}>
