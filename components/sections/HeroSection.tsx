@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { site } from "@/lib/data";
 import DashboardCircle from "@/components/shared/DashboardCircle";
 
@@ -25,7 +24,7 @@ export default function HeroSection({
       <div className="absolute inset-0">
         <Image
           fill
-          src="/hero-car.jpg"
+          src="/hero-car.webp"
           alt="Sedã executivo preto em rua molhada da cidade à noite"
           priority
           sizes="100vw"
@@ -67,7 +66,9 @@ export default function HeroSection({
               style={{ animationDelay: "0.1s" }}
             >
               Transfer Executivo &amp;{" "}
-              <span className="font-light italic text-gold">SOS Automotivo</span>
+              <span className="font-light italic text-gold">
+                SOS Automotivo
+              </span>
               <br />
               em{" "}
               <span className="inline-flex items-baseline gap-3">

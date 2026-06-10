@@ -4,15 +4,15 @@ export default function SplitSection() {
   return (
     <section className="relative bg-background">
       <div className="grid md:grid-cols-2">
-        <div className="relative aspect-[5/4] md:aspect-auto md:min-h-[520px] overflow-hidden">
+        <div className="relative aspect-5/4 md:aspect-auto md:min-h-130 overflow-hidden">
           <Image
             fill
-            src="/interior.jpg"
+            src="/interior.webp"
             alt="Interior de carro de luxo à noite"
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">
             <span className="eyebrow text-gold">Transfer</span>
             <h2 className="mt-3 max-w-md text-[clamp(1.6rem,3vw,2.6rem)] font-medium leading-tight text-foreground">
@@ -21,15 +21,15 @@ export default function SplitSection() {
           </div>
         </div>
 
-        <div className="relative aspect-[5/4] md:aspect-auto md:min-h-[520px] overflow-hidden md:border-l border-hairline">
+        <div className="relative aspect-5/4 md:aspect-auto md:min-h-130 overflow-hidden md:border-l border-hairline">
           <Image
             fill
-            src="/sos-hands.jpg"
+            src="/sos-hands.webp"
             alt="Técnico de assistência rodoviária trabalhando à noite"
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
           <div className="absolute bottom-8 left-8 right-8 md:bottom-12 md:left-12">
             <span className="eyebrow text-sos">SOS</span>
             <h2 className="mt-3 max-w-md text-[clamp(1.6rem,3vw,2.6rem)] font-medium leading-tight text-foreground">

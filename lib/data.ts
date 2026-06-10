@@ -395,7 +395,7 @@ export const fleetVehicles: FleetVehicle[] = [
     id: "virtus-exclusive",
     name: "Volkswagen Virtus Exclusive 250 TSI",
     title: "Elegância Executiva",
-    image: "/virtus.webp",
+    image: "/virtus-v1.webp",
     role: "Categoria Premium",
     specs: [
       ["Capacidade", "4 passageiros"],
@@ -410,7 +410,7 @@ export const fleetVehicles: FleetVehicle[] = [
     id: "onix-turbo",
     name: "Chevrolet Onix 1.0 Turbo 2024",
     title: "Eficiência Inteligente",
-    image: "/onix.webp",
+    image: "/onix-v1.webp",
     role: "Categoria Comfort",
     specs: [
       ["Capacidade", "4 passageiros"],
