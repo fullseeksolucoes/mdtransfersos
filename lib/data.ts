@@ -1,23 +1,19 @@
 import type {
   SiteConfig,
   NavLink,
-  ServiceContent,
-  JourneyStep,
   CityContent,
 } from "./types";
 
 export const site: SiteConfig = {
   name: "MD Transfers & SOS",
   initials: "MD",
+  url: "https://www.mdtransfersos.com.br",
   tagline: "Mobilidade Executiva Premium & Assistência Rodoviária",
   description:
     "Além do transporte. Sem limites. A MD Transfers & SOS oferece serviços premium de transfer executivo e assistência rodoviária com resposta rápida em toda a região.",
   phone: "+5547996771229",
-  phoneDisplay: "47 99677-1229 (SOS) · 47 99995-9607 (Transfer)",
   email: "",
   whatsapp: "+5547996771229",
-  whatsappLink:
-    "https://wa.me/5547996771229?text=Ol%C3%A1!%20Preciso%20de%20assist%C3%AAncia%20SOS%20automotiva.",
   whatsappSOS: "+5547996771229",
   whatsappSOSLink:
     "https://wa.me/5547996771229?text=Ol%C3%A1!%20Preciso%20de%20assist%C3%AAncia%20SOS%20automotiva.",
@@ -34,99 +30,6 @@ export const navLinks: NavLink[] = [
   { label: "Contato", href: "#contato" },
 ];
 
-export const executiveService: ServiceContent = {
-  title: "Transfer Executivo",
-  subtitle: "Soluções Premium de Mobilidade",
-  tagline: "Cada jornada reflete quem você é.",
-  description:
-    "Experimente o auge do transporte executivo. De transfers de aeroporto a eventos corporativos, cada viagem é pensada para o profissional que exige mais que um simples deslocamento.",
-  features: [
-    {
-      title: "Excelência em Chauffeur",
-      description:
-        "Motoristas profissionais treinados e multilíngues que antecipam cada necessidade com precisão discreta.",
-    },
-    {
-      title: "Monitoramento de Voos em Tempo Real",
-      description:
-        "Seu voo, nossa prioridade. Rastreamos cada chegada para garantir busca perfeita, independentemente de atrasos.",
-    },
-    {
-      title: "Seleção Premium de Frota",
-      description:
-        "Veículos executivos selecionados a dedo, mantidos nos mais altos padrões de luxo e desempenho.",
-    },
-    {
-      title: "Discreto & Confidencial",
-      description:
-        "Discrição absoluta garantida. Sua privacidade é nosso compromisso profissional.",
-    },
-  ],
-  accent: "blue",
-};
-
-export const sosService: ServiceContent = {
-  title: "SOS Automotivo",
-  subtitle: "Resposta Rápida de Emergência",
-  tagline: "Em minutos. Não em horas.",
-  description:
-    "Quando o inesperado acontece na estrada, o MD SOS Automotivo oferece assistência rodoviária imediata e profissional. Nossas unidades de resposta rápida estrategicamente posicionadas garantem que você nunca fique sozinho.",
-  features: [
-    {
-      title: "Resposta em Menos de 15 Minutos",
-      description:
-        "Unidades de resposta estrategicamente posicionadas garantem tempos de chegada líderes do setor em toda nossa área de cobertura.",
-    },
-    {
-      title: "Suporte Rodoviário Completo",
-      description:
-        "De troca de pneus a entrega de combustível, de partida auxiliar a assistência em travamento. Cuidamos de tudo.",
-    },
-    {
-      title: "Central de Emergência 24/7",
-      description:
-        "Central de coordenação 24 horas. Uma chamada conecta você a assistência imediata e rastreável.",
-    },
-    {
-      title: "Unidades com Rastreamento GPS",
-      description:
-        "Rastreamento veicular em tempo real para que você saiba exatamente quando a ajuda chegará.",
-    },
-  ],
-  accent: "red",
-};
-
-export const journeySteps: JourneyStep[] = [
-  {
-    step: "01",
-    title: "Solicitar",
-    description:
-      "Agende via WhatsApp, telefone ou nossa central. Especifique suas necessidades em segundos.",
-    icon: "phone",
-  },
-  {
-    step: "02",
-    title: "Confirmar",
-    description:
-      "Receba confirmação instantânea com detalhes do veículo, informações do motorista e previsão de chegada.",
-    icon: "check-circle",
-  },
-  {
-    step: "03",
-    title: "Acompanhar",
-    description:
-      "Acompanhe sua corrida em tempo real. Saiba exatamente quando seu veículo chegará.",
-    icon: "navigation",
-  },
-  {
-    step: "04",
-    title: "Chegar",
-    description:
-      "Experimente mobilidade premium da coleta ao destino, com segurança e pontualidade.",
-    icon: "flag",
-  },
-];
-
 export const cityPages: CityContent[] = [
   {
     slug: "joinville",
@@ -135,7 +38,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em Joinville | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo premium e SOS automotivo em Joinville. Motorista particular, carro com motorista e assistência rodoviária 24h. Solicite pelo WhatsApp.",
-    heroHeadline: "Transfer Executivo &amp; SOS Joinville",
     heroSubtext:
       "Transfers com motorista para executivos e suporte rodoviário de emergência em Joinville. Operados por uma única equipe discreta. Um número. Zero concessões.",
     paragraphs: [
@@ -150,7 +52,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer para Aeroporto de Navegantes | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo para o Aeroporto de Navegantes (Minister Victor Konder). Motorista particular de Joinville para Navegantes e vice-versa. Conforto e pontualidade.",
-    heroHeadline: "Transfer &amp; SOS Navegantes",
     heroSubtext:
       "Transfers executivos para o Aeroporto de Navegantes, com motorista particular e monitoramento de voo em tempo real. Suporte SOS também disponível na região.",
     paragraphs: [
@@ -166,7 +67,6 @@ export const cityPages: CityContent[] = [
       "Transfer Executivo em São Francisco do Sul | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em São Francisco do Sul. Motorista particular, van executiva e assistência 24h na cidade e litoral norte de SC.",
-    heroHeadline: "Transfer &amp; SOS São Francisco do Sul",
     heroSubtext:
       "Transfers executivos e assistência SOS em São Francisco do Sul. Motorista particular para viagens de negócios e lazer na cidade histórica do litoral catarinense.",
     paragraphs: [
@@ -181,7 +81,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em Jaraguá do Sul | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em Jaraguá do Sul. Motorista particular para eventos corporativos e turismo. Assistência rodoviária 24h na cidade.",
-    heroHeadline: "Transfer &amp; SOS Jaraguá do Sul",
     heroSubtext:
       "Transfers executivos e suporte SOS em Jaraguá do Sul. Motorista particular certificado para levar você a negócios ou lazer na segunda maior cidade da região.",
     paragraphs: [
@@ -196,7 +95,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em Araquari | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em Araquari. Motorista particular, carro executivo e assistência 24h. Atendimento em toda a cidade e região.",
-    heroHeadline: "Transfer &amp; SOS Araquari",
     heroSubtext:
       "Transfers executivos e suporte SOS em Araquari. Motorista particular para viagens corporativas e assistência rodoviária de emergência.",
     paragraphs: [
@@ -211,7 +109,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em Guaramirim | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em Guaramirim. Motorista particular e assistência rodoviária 24h. Conforto e segurança no Vale do Itapocu.",
-    heroHeadline: "Transfer &amp; SOS Guaramirim",
     heroSubtext:
       "Transfers executivos e suporte SOS em Guaramirim. Motorista particular premium para suas viagens na região do Vale do Itapocu.",
     paragraphs: [
@@ -225,7 +122,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em Itapoá | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em Itapoá. Motorista particular, van executiva e assistência rodoviária 24h. Porto de Itapoá e praias da região.",
-    heroHeadline: "Transfer &amp; SOS Itapoá",
     heroSubtext:
       "Transfers executivos e suporte SOS em Itapoá. Motorista particular para viagens de negócios ao Porto de Itapoá ou lazer nas praias do litoral norte.",
     paragraphs: [
@@ -239,7 +135,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em Garuva | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em Garuva. Motorista particular e assistência rodoviária 24h na divisa de SC com PR.",
-    heroHeadline: "Transfer &amp; SOS Garuva",
     heroSubtext:
       "Transfers executivos e suporte SOS em Garuva. Motorista particular para viagens na divisa de Santa Catarina com o Paraná.",
     paragraphs: [
@@ -254,7 +149,6 @@ export const cityPages: CityContent[] = [
       "Transfer Executivo em Balneário Barra do Sul | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em Balneário Barra do Sul. Motorista particular e assistência 24h no litoral norte de SC.",
-    heroHeadline: "Transfer &amp; SOS Balneário Barra do Sul",
     heroSubtext:
       "Transfers executivos e suporte SOS em Balneário Barra do Sul. Motorista particular para viagens de lazer ao litoral norte catarinense.",
     paragraphs: [
@@ -268,7 +162,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em São Bento do Sul | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em São Bento do Sul. Motorista particular e assistência rodoviária 24h no Planalto Norte Catarinense.",
-    heroHeadline: "Transfer &amp; SOS São Bento do Sul",
     heroSubtext:
       "Transfers executivos e suporte SOS em São Bento do Sul. Motorista particular premium para o Planalto Norte Catarinense.",
     paragraphs: [
@@ -282,7 +175,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em Campo Alegre | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em Campo Alegre. Motorista particular e assistência rodoviária 24h na serra catarinense.",
-    heroHeadline: "Transfer &amp; SOS Campo Alegre",
     heroSubtext:
       "Transfers executivos e suporte SOS em Campo Alegre. Motorista particular para viagens à serra catarinense com conforto e segurança.",
     paragraphs: [
@@ -296,7 +188,6 @@ export const cityPages: CityContent[] = [
     metaTitle: "Transfer Executivo em Rio Negrinho | MD Transfers & SOS",
     metaDescription:
       "Transfer executivo e SOS automotivo em Rio Negrinho. Motorista particular e assistência rodoviária 24h no Planalto Norte.",
-    heroHeadline: "Transfer &amp; SOS Rio Negrinho",
     heroSubtext:
       "Transfers executivos e suporte SOS em Rio Negrinho. Motorista particular premium para o Planalto Norte Catarinense.",
     paragraphs: [
@@ -306,21 +197,12 @@ export const cityPages: CityContent[] = [
 ];
 
 export const seoContent = {
-  title: "Transfer Executivo Premium e Assistência Rodoviária em Joinville",
   paragraphs: [
     "A MD Transfers & SOS é líder em transfer executivo e assistência rodoviária em Joinville e região. Somos a melhor opção para quem busca motorista particular de confiança, carro com motorista profissional e suporte automotivo de emergência. Tudo com um padrão premium de atendimento.",
     "Nosso serviço de transfer executivo cobre toda a região metropolitana de Joinville, incluindo o Aeroporto Lauro Carneiro de Loyola, o Aeroporto de Navegantes (Minister Victor Konder), distritos comerciais e áreas residenciais nobres. Fazemos transfers para toda Santa Catarina com frota de veículos executivos selecionados para conforto, estilo e apresentação profissional.",
     "Para motoristas e frotistas, nossa divisão SOS Automotivo oferece a rede de assistência rodoviária mais ágil da região. Com unidades de resposta rápida estrategicamente localizadas, despacho com rastreamento GPS e coordenação 24/7, entregamos tranquilidade mensurável em minutos, não em horas. Serviços de troca de pneus, recarga de bateria e reparo de pneu furado estão disponíveis a qualquer hora.",
     "Se você precisa de transporte executivo para uma reunião importante, van executiva para grupo, transfer para o aeroporto de Navegantes ou suporte rodoviário de emergência, a MD Transfers & SOS oferece um padrão único de serviço: excepcional, imediato e profissional.",
   ],
-};
-
-export const ctaContent = {
-  headline: "Pronto para experimentar mobilidade premium?",
-  subheadline:
-    "Uma chamada conecta você à rede mais confiável de transporte executivo e emergência rodoviária de Joinville e região.",
-  whatsappMessage:
-    "Olá!%20Gostaria%20de%20solicitar%20um%20transfer%20executivo.",
 };
 
 /* ── Section data ── */

@@ -9,14 +9,11 @@ import { site } from '@/lib/data';
 interface WhatsAppButtonProps {
   className?: string;
   size?: 'md' | 'lg';
-  label?: boolean;
-  href?: string;
 }
 
 export default function WhatsAppButton({
   className,
   size = 'lg',
-  label = false,
 }: WhatsAppButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -83,6 +80,8 @@ export default function WhatsAppButton({
 
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? 'Fechar opções de WhatsApp' : 'Falar no WhatsApp'}
+        aria-expanded={isOpen}
         className={cn(
           'relative flex items-center justify-center rounded-full bg-[#25D366] text-white transition-shadow hover:shadow-2xl',
           sizeClasses,
@@ -99,7 +98,7 @@ export default function WhatsAppButton({
         whileTap={{ scale: 0.95 }}
       >
         {isOpen ? (
-          <svg className="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg className="size-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
             <path d="M18 6L6 18M6 6l12 12" />
           </svg>
         ) : (

@@ -1,22 +1,8 @@
-"use client";
-
 import { Phone, MapPin, MessageCircle } from "lucide-react";
 import { site, navLinks, cityPages } from "@/lib/data";
 import Container from "@/components/shared/Container";
 import Link from "next/link";
-
-const footerCities = cityPages
-  .filter((c) =>
-    [
-      "joinville",
-      "navegantes",
-      "sao-francisco-do-sul",
-      "jaragua-do-sul",
-      "araquari",
-      "itapoa",
-    ].includes(c.slug),
-  )
-  .slice(0, 6);
+import SectionLink from "@/components/shared/SectionLink";
 
 export default function Footer() {
   return (
@@ -45,12 +31,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {navLinks.slice(0, 3).map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <SectionLink
                     href={link.href}
                     className="text-sm text-white/50 hover:text-white transition-colors duration-300 font-body"
                   >
                     {link.label}
-                  </Link>
+                  </SectionLink>
                 </li>
               ))}
             </ul>
@@ -58,10 +44,10 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-white/50 mb-6">
-              Cidades
+              Cidades atendidas
             </h3>
-            <ul className="space-y-3">
-              {footerCities.map((city) => (
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
+              {cityPages.map((city) => (
                 <li key={city.slug}>
                   <Link
                     href={`/cidade/${city.slug}`}

@@ -1,12 +1,12 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/lib/data";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/_next/",
     },
-    sitemap: "https://www.mdtransfersos.com.br/sitemap.xml",
+    sitemap: `${site.url}/sitemap.xml`,
   };
 }

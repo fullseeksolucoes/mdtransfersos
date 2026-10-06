@@ -44,10 +44,16 @@ export default function FAQSection() {
         />
 
         <Reveal delay={200}>
-          <div className="flex flex-wrap justify-center gap-2 mt-10 mb-12">
+          <div
+            role="tablist"
+            aria-label="Categorias de perguntas"
+            className="flex flex-wrap justify-center gap-2 mt-10 mb-12"
+          >
             {tabs.map((tab) => (
               <button
                 key={tab.key}
+                role="tab"
+                aria-selected={activeTab === tab.key}
                 onClick={() => {
                   setActiveTab(tab.key as 'transfer' | 'sos');
                   setOpenIndex(null);

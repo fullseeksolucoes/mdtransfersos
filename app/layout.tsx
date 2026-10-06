@@ -1,15 +1,82 @@
 import type { Metadata } from "next";
 import { playfair, inter } from "./fonts";
 import "./globals.css";
-import { site, faqData } from "@/lib/data";
+import { site, faqData, cityPages } from "@/lib/data";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/shared/WhatsAppButton";
+import MotionProvider from "@/components/shared/MotionProvider";
 
-const SITE_URL = "https://www.mdtransfersos.com.br";
+const SITE_URL = site.url;
+
+const localBusinessSchema = {
+  "@type": "LocalBusiness",
+  "@id": `${SITE_URL}/#empresa`,
+  name: site.name,
+  description: site.tagline,
+  url: SITE_URL,
+  telephone: site.phone,
+  ...(site.email && { email: site.email }),
+  logo: `${SITE_URL}/icon.svg`,
+  image: `${SITE_URL}/hero-car.webp`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Joinville",
+    addressRegion: "SC",
+    addressCountry: "BR",
+  },
+  areaServed: cityPages.map((city) => ({
+    "@type": "City",
+    name: `${city.name}, ${city.state}`,
+  })),
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: site.whatsappSOS,
+      contactType: "emergency",
+      name: "SOS Automotivo",
+      availableLanguage: "Portuguese",
+      hoursAvailable: "Mo-Su 00:00-23:59",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: site.whatsappTransfer,
+      contactType: "reservations",
+      name: "Transfer Executivo",
+      availableLanguage: "Portuguese",
+    },
+  ],
+  openingHours: "Mo-Su 00:00-23:59",
+  priceRange: "$$$",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Serviços",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Transfer Executivo",
+          description:
+            "Veículos premium com motoristas certificados para compromissos corporativos e pessoais.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "SOS Automotivo",
+          description:
+            "Assistência rodoviária com resposta rápida para emergências.",
+        },
+      },
+    ],
+  },
+};
 
 const faqSchema = {
   "@type": "FAQPage",
+  "@id": `${SITE_URL}/#faq`,
   mainEntity: faqData.map((item) => ({
     "@type": "Question",
     name: item.question,
@@ -22,48 +89,7 @@ const faqSchema = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: site.name,
-  description: site.tagline,
-  url: SITE_URL,
-  telephone: site.phone,
-  email: site.email,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Joinville",
-    addressRegion: "SC",
-    addressCountry: "BR",
-  },
-  areaServed: [
-    "Joinville",
-    "Araquari",
-    "São Francisco do Sul",
-    "Itapoá",
-    "Jaraguá do Sul",
-    "Guaramirim",
-  ],
-  openingHours: "Mo-Su 00:00-23:59",
-  priceRange: "$$$",
-  image: `${SITE_URL}/hero-car.webp`,
-  sameAs: [],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Serviços",
-    itemListElement: [
-      {
-        "@type": "Service",
-        name: "Transfer Executivo",
-        description:
-          "Veículos premium com motoristas certificados para compromissos corporativos e pessoais.",
-      },
-      {
-        "@type": "Service",
-        name: "SOS Automotivo",
-        description:
-          "Assistência rodoviária com resposta rápida para emergências.",
-      },
-    ],
-  },
+  "@graph": [localBusinessSchema, faqSchema],
 };
 
 export const metadata: Metadata = {
@@ -106,10 +132,6 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
       </head>
       <body className="min-h-full flex flex-col bg-white font-body text-charcoal-800 selection:bg-navy-800/15 selection:text-charcoal-900">
         <a
@@ -118,12 +140,14 @@ export default function RootLayout({
         >
           Pular para o conteúdo principal
         </a>
-        <Navbar />
-        <main id="conteudo-principal" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppButton />
+        <MotionProvider>
+          <Navbar />
+          <main id="conteudo-principal" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppButton />
+        </MotionProvider>
       </body>
     </html>
   );

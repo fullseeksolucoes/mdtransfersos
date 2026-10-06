@@ -62,6 +62,7 @@ export default function TestimonialsSection() {
           <button
             onClick={() => setActiveIndex(Math.max(0, activeIndex - 3))}
             disabled={!canGoPrev}
+            aria-label="Depoimentos anteriores"
             className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-ink-600 hover:border-primary hover:text-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <svg
@@ -84,6 +85,8 @@ export default function TestimonialsSection() {
               <button
                 key={i}
                 onClick={() => setActiveIndex(i * 3)}
+                aria-label={`Página ${i + 1} de depoimentos`}
+                aria-current={currentPage === i ? "true" : undefined}
                 className={`w-2 h-2 rounded-full transition-all ${
                   currentPage === i
                     ? "bg-primary w-6"
@@ -100,6 +103,7 @@ export default function TestimonialsSection() {
               )
             }
             disabled={!canGoNext}
+            aria-label="Próximos depoimentos"
             className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-ink-600 hover:border-primary hover:text-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <svg

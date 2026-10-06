@@ -57,7 +57,7 @@ export default function CoverageMap({ locations }: CoverageMapProps) {
 
       <div className="absolute top-4 left-4 flex items-center gap-2">
         <Radio size={12} className="text-ocean-600" />
-        <span className="text-xs text-ocean-600 tracking-widest uppercase font-mono">Area de Cobertura</span>
+        <span className="text-xs text-ocean-600 tracking-widest uppercase font-mono">Área de Cobertura</span>
       </div>
       <div className="absolute bottom-4 right-4 text-xs text-ink-300 font-mono">ATIVO 24H</div>
     </div>

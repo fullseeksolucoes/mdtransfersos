@@ -10,7 +10,7 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import SeoContentSection from '@/components/sections/SeoContentSection';
 import FAQSection from '@/components/sections/FAQSection';
 import CTASection from '@/components/sections/CTASection';
-import { cityPages } from '@/lib/data';
+import { cityPages, site } from '@/lib/data';
 import type { CityContent } from '@/lib/types';
 
 function getCity(slug: string): CityContent | undefined {
@@ -31,15 +31,24 @@ export async function generateMetadata({
 
   if (!city) return {};
 
+  const canonical = city.slug === 'joinville' ? '/' : `/cidade/${city.slug}`;
+
   return {
-    title: city.metaTitle,
+    title: { absolute: city.metaTitle },
     description: city.metaDescription,
+    alternates: { canonical },
     openGraph: {
       title: city.metaTitle,
       description: city.metaDescription,
+      url: canonical,
+      siteName: site.name,
+      locale: 'pt_BR',
+      type: 'website',
     },
-    alternates: {
-      canonical: city.slug === 'joinville' ? '/' : `/cidade/${city.slug}`,
+    twitter: {
+      card: 'summary_large_image',
+      title: city.metaTitle,
+      description: city.metaDescription,
     },
   };
 }
@@ -54,8 +63,26 @@ export default async function CityPage({
 
   if (!city) notFound();
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: site.url },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: city.name,
+        item: `${site.url}/cidade/${city.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <HeroSection cityName={city.name} subtext={city.heroSubtext} />
       <ServicesSection />
       <SplitSection />

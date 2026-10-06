@@ -12,6 +12,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { site, navLinks } from "@/lib/data";
 import Container from "@/components/shared/Container";
+import SectionLink from "@/components/shared/SectionLink";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -76,7 +77,7 @@ export default function Navbar() {
 
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              <Link
+              <SectionLink
                 key={link.href}
                 href={link.href}
                 className={cn(
@@ -87,7 +88,7 @@ export default function Navbar() {
                 )}
               >
                 {link.label}
-              </Link>
+              </SectionLink>
             ))}
             <a
               href={site.whatsappTransferLink}
@@ -141,14 +142,14 @@ export default function Navbar() {
               <Container>
                 <nav className="flex flex-col gap-1 pb-6 pt-4">
                   {navLinks.map((link) => (
-                    <Link
+                    <SectionLink
                       key={link.href}
                       href={link.href}
                       onClick={() => setIsMobileOpen(false)}
                       className="px-4 py-3 rounded-lg text-sm font-medium tracking-wide text-charcoal-600 hover:bg-charcoal-100 hover:text-charcoal-900 transition-colors"
                     >
                       {link.label}
-                    </Link>
+                    </SectionLink>
                   ))}
                 </nav>
 

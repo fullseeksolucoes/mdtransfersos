@@ -96,6 +96,8 @@ export default function HeroSection({
             >
               <a
                 href={WHATSAPP_SOS}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3.5 text-[0.85rem] font-medium tracking-wide text-background transition-all hover:bg-gold"
               >
                 <span className="relative flex h-2 w-2">

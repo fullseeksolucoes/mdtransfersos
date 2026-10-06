@@ -28,7 +28,7 @@ export default function CoverageSection({ cityName = "Joinville" }: CoverageSect
 
             <Reveal delay={200}>
               <p className="text-ink-500 text-base leading-relaxed mb-10">
-                Com frota própria estrategicamente distribuída por {cityName.toLowerCase()} e
+                Com frota própria estrategicamente distribuída por {cityName} e
                 região metropolitana, garantimos tempo de resposta rápido em
                 qualquer ponto.
               </p>
@@ -55,7 +55,7 @@ export default function CoverageSection({ cityName = "Joinville" }: CoverageSect
               <div className="flex items-center gap-6 p-6 border border-ink-200 bg-surface-100">
                 <div className="text-center">
                   <span className="stat-number text-3xl text-ocean-600 block">
-                    &lt;30
+                    &lt;20
                   </span>
                   <span className="text-xs text-ink-500 uppercase tracking-wider">
                     min
